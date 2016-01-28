@@ -60,8 +60,7 @@
 
 ### apt-get 업데이트 및 업그레이드 (업그레이드는 시간이 좀 걸림)
   ```
-  $ sudo apt-get update
-  $ sudo apt-get upgrade
+  $ sudo apt-get update && sudo apt-get upgrade -y
   $ sudo apt-get -y install vim ntfs-3g xfsprogs git openjdk-8-jdk
   ```
   - 혹시 JDK가 설치되지 않으면 아래와 같이 repo 등록 후 다시 설치 시도
@@ -211,31 +210,16 @@
     ...
     /dev/sda1 /mnt/exdrive xfs defaults 0 0
     ```
-  - GlusterFS 설치
+  - GlusterFS 설치 (sudo apt-cache search glusterfs 날려보면 이미 repo에 다 있다.)
     ```
-    $ sudo apt-get -y install Automake Autoconf Libtool flex Bison OpenSSL libxml2 lvm2
-    
-         libaio libibverbs librdmacm readline  glib2 liburcu cmocka libacl sqlite
-       
-E: Unable to locate package libaio
-E: Unable to locate package libibverbs
-E: Unable to locate package librdmacm
-E: Unable to locate package readline
-E: Unable to locate package glib2
-E: Unable to locate package liburcu
-E: Unable to locate package cmocka
-E: Unable to locate package libacl
-
-
     $ mkdir -p /mnt/exdrive/brick
-    $ cd $HOME/tmp
-    $ wget -nd -nc -r -A.deb http://download.gluster.org/pub/gluster/glusterfs/LATEST/Debian/jessie/
-    $ dpkg -i 
+    $ 
     ```
   - References
     - [xfs 포맷하기](https://linhost.info/2012/08/format-a-volume-as-xfs-in-debian-and-ubuntu/)
     - [GlusterFS 홈페이지](https://www.gluster.org/)
-    - [GlusterFS 설치하기](http://gluster.readthedocs.org/en/latest/Install-Guide/Common_criteria/#getting-started)
+    - [GlusterFS 설치하기](http://banoffeepiserver.com/glusterfs/set-up-glusterfs-on-two-nodes.html): 설치 부분만 참고.
+    - [GlusterFS 세팅하기](http://gluster.readthedocs.org/en/latest/Install-Guide/Common_criteria/#getting-started)
 
 ### samba
   http://m.cafe.naver.com/openrt/2913
