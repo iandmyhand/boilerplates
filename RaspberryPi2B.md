@@ -174,7 +174,34 @@
     $ cp /mnt/* ./
     $ sudo umount /mnt
     ```
-    
+    - 파티셔닝을 재설정한다.
+    ```
+    $ sudo fdisk -u -c /dev/sda1  # u(units): 단위를 출력해준다. c(compatibility): dos/nondos 모드를 선택한다.
+    ```
+    - p 로 영역 알아보기. Linux로 할당되어 있는 파티션을 수정해주어야 함
+    - d -> <숫자> 기존 파티션을 모두 삭제한다.
+    - n -> p(primary) -> 1
+    - First sector: Return(default)
+    - Last Sector: Return(default)
+    - w (반영) -> q (종료)
+    - mkfs.xfs를 이용하여 xfs로 다시 포맷한다.(-f(force): 강제 포맷(기존 내용 삭제). -L(Label): 디스크에 이름 붙여주기)
+    ```
+    $ sudo mkfs.xfs -f -L "My Book" /dev/sda1
+    ```
+    - 마운트 포인트 생성 후 생성한 곳으로 마운트 해보고 *df*를 이용해 정상적으로 마운트 되었는지 확인해본다.
+    ```
+    $ sudo mkdir /mnt/exdrive
+    $ sudo mount -t xfs /dev/sda1 /mnt/exdrive
+    $ df -h
+    Filesystem      Size  Used Avail Use% Mounted on
+    /dev/sda1       1.9T   33M  1.9T   1% /mnt/exdrive
+    ```
+    - 시스템 재시작 후에도 자동으로 인식할 수 있게 *fstab*의 마지막 줄에 마운트 내용을 추가해준다.
+    ```
+    $ sudo vi /etc/fstab
+    ...
+    /dev/sda1 /mnt/exdrive xfs defaults 0 0
+    ```
     - [참고](https://linhost.info/2012/08/format-a-volume-as-xfs-in-debian-and-ubuntu/)
   - https://www.gluster.org/
 
