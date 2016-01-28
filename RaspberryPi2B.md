@@ -24,9 +24,9 @@
   - 라즈베리파이에 micro-SD card 넣기
   - 모니터 없이 IP 알아내서 접속하기
     - brew로 Nmap 설치하기 (brew를 사용하지 않는다면 [nmap 공식 홈페이지](https://nmap.org/book/inst-macosx.html)에서 다운받아 설치해도 된다.)
-      ```
-      $ brew install nmap
-      ```
+    ```
+    $ brew install nmap
+    ```
     - ifconfig에서 broadcast로 나오는 IP를 확인하여 nmap으로 현재 접속한 라우터에 어떤 IP들이 있는지 확인해본다.
       ```
       $ ifconfig
