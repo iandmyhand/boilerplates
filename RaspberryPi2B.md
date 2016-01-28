@@ -1,7 +1,9 @@
 # Set up Raspberry Pi 2 B & B+ (On Mac OS X)
 
 ## Raspbian 설치 및 부팅
-- B+ 모델까지는 Ubuntu가 공식지원하지 않기 때문에 다른 버전을 설치하거나 Raspbian을 설치해야 한다.
+- 참고
+  - B+ 모델까지는 Ubuntu가 공식지원하지 않기 때문에 다른 버전을 설치하거나 Raspbian을 설치해야 한다.
+  - 2B 모델부터는 Snappy Ubuntu Core를 설치할 수 있지만, Snappy는 apt-get이 지원되지도 않고 아직 레퍼런스가 별로 없으니 그냥 Debian 기반인 Raspbian을 설치하자.
 - Raspbian 설치(Max OS X 기준. Windows나 Linux를 사용한다면 [이 곳](https://www.raspberrypi.org/documentation/installation/installing-images/README.md)에 가이드가 있다.)
   * [Raspbian download](https://www.raspberrypi.org/downloads/raspbian/) 페이지에서 OS 이미지 파일을 다운받는다.
   * Disk Utility를 실행 후 좌측 패널에서 자신의 SD card를 선택 후, 상단 *Erase* 버튼을 클릭한다.
