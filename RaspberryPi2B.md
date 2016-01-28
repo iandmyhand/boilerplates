@@ -8,11 +8,11 @@
   - B+ 모델까지는 Ubuntu가 공식지원하지 않기 때문에 다른 버전을 설치하거나 Raspbian을 설치해야 한다.
   - 2B 모델부터는 Snappy Ubuntu Core를 설치할 수 있지만, Snappy는 apt-get이 지원되지도 않고 아직 레퍼런스가 별로 없으니 그냥 Debian 기반인 Raspbian을 설치하자.
 - Raspbian 설치(Max OS X 기준. Windows나 Linux를 사용한다면 [이 곳](https://www.raspberrypi.org/documentation/installation/installing-images/README.md)에 가이드가 있다.)
-  * [Raspbian download](https://www.raspberrypi.org/downloads/raspbian/) 페이지에서 OS 이미지 파일을 다운받는다. (terminal로만 작업할 경우 RASPBIAN JESSIE LITE를 받으면 된다.)
-  * Disk Utility를 실행 후 좌측 패널에서 자신의 SD card를 선택 후, 상단 *Erase* 버튼을 클릭한다.
-  * Name은 적당히 입력하고(어차피 OS image를 설치할 때 알아서 바뀐다.) Format은 *MS-DOS (FAT)*을 선택한다.
-  * SD card format 완료 후 terminal에서 다음 명령어로 raspbian을 설치한다.
-  * <disk# from diskutil> 에는 ```diskutil list```로 찾은 micro SD card의 번호를 입력하면 되겠다.
+  - [Raspbian download](https://www.raspberrypi.org/downloads/raspbian/) 페이지에서 OS 이미지 파일을 다운받는다. (terminal로만 작업할 경우 RASPBIAN JESSIE LITE를 받으면 된다.)
+  - Disk Utility를 실행 후 좌측 패널에서 자신의 SD card를 선택 후, 상단 *Erase* 버튼을 클릭한다.
+  - Name은 적당히 입력하고(어차피 OS image를 설치할 때 알아서 바뀐다.) Format은 *MS-DOS (FAT)*을 선택한다.
+  - SD card format 완료 후 terminal에서 다음 명령어로 raspbian을 설치한다.
+  - <disk# from diskutil> 에는 ```diskutil list```로 찾은 micro SD card의 번호를 입력하면 되겠다.
   ```
   diskutil list
   diskutil unmountDisk /dev/disk<disk# from diskutil>
@@ -77,12 +77,13 @@
 ### 개인환경 설정하기
   - [리눅스 개인환경 설정]() 참고
   - 한글 설정
-  ```
-  $ sudo raspi-config
-  5 Internationalisation Options        Set up language and regional settings
-  I1 Change Locale                      Set up language and regional settings
-  ```
-  - en_GB.UTF-8 UTF-8, en_US.UTF-8 UTF-8, ko_KR.UTF-8 UTF-8 세 개를 스페이스바로 선택 후 엔터. 디폴트는 영어로 해주자.(en_GB)
+    - raspi-config를 이용해서 언어 설정을 추가한다.
+    ```
+    $ sudo raspi-config
+    5 Internationalisation Options        Set up language and regional settings
+    I1 Change Locale                      Set up language and regional settings
+    ```
+    - en_GB.UTF-8 UTF-8, en_US.UTF-8 UTF-8, ko_KR.UTF-8 UTF-8 세 개를 스페이스바로 선택 후 엔터. 디폴트는 영어로 해주자.(en_GB)
 
 ### hostname 설정해주기
   - /etc/hostname 파일에서 raspberrypi를 원하는 이름으로 변경해주기
