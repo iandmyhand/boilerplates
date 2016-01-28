@@ -87,13 +87,13 @@
 
 ### hostname 설정해주기
   - /etc/hostname 파일에서 raspberrypi를 원하는 이름으로 변경해주기
-  ```
-  $ sudo vi /etc/hostname
-  ```
+    ```
+    $ sudo vi /etc/hostname
+    ```
   - /etc/hosts 파일에서 로컬호스트에 raspberrypi로 매핑되어 있는 부분을 방금 설정한 이름으로 변경해주기
-  ```
-  $ sudo vi /etc/hosts
-  ```
+    ```
+    $ sudo vi /etc/hosts
+    ```
 
 ### micro SD card에서 파티셔닝되지 않은 남은 부분 사용할 수 있도록 세팅하기
   ```
