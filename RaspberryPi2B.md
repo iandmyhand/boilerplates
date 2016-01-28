@@ -118,7 +118,7 @@ en_GB.UTF-8 UTF-8, en_US.UTF-8 UTF-8, ko_KR.UTF-8 UTF-8 세 개를 스페이스�
   ```$ sudo vi /usr/local/bin/ddns.sh```
   ```
   #!/bin/sh
-  /usr/bin/wget -O - --http-user=iandmyhand --http-passwd=pf3s2kdm40 'http://dyna.dnsever.com/update.php?host[cloud.hanseomgi.com]'
+  /usr/bin/wget -O - --http-user=<USER NAME> --http-passwd=<PASSWORD> 'http://dyna.dnsever.com/update.php?host[<HOST NAME>]'
   ```
   ```
   $ sudo chmod +x /usr/local/bin/ddns.sh
@@ -151,24 +151,24 @@ en_GB.UTF-8 UTF-8, en_US.UTF-8 UTF-8, ko_KR.UTF-8 UTF-8 세 개를 스페이스�
 - Nginx 설치
   ```
   $ sudo apt-get -y install curl build-essential libpcre3-dev libpcre++-dev zlib1g-dev libcurl4-openssl-dev libssl-dev
-  $ VERSION=1.8.0
-  $ mkdir -p $HOME/apps/nginx-$VERSION $HOME/logs/nginx $HOME/www
-  $ wget http://nginx.org/download/nginx-$VERSION.tar.gz
-  $ tar xf nginx-$VERSION.tar.gz
-  $ cd nginx-$VERSION/
+  $ NGINX_VERSION=1.8.0
+  $ mkdir -p $HOME/apps/nginx-$NGINX_VERSION $HOME/logs/nginx $HOME/www
+  $ wget http://nginx.org/download/nginx-$NGINX_VERSION.tar.gz
+  $ tar xf nginx-$NGINX_VERSION.tar.gz
+  $ cd nginx-$NGINX_VERSION/
   $ . configure \
-  > --prefix=$HOME/apps/nginx-$VERSION \
+  > --prefix=$HOME/apps/nginx-$NGINX_VERSION \
   > --error-log-path=$HOME/logs/nginx/error.log \
   > --http-log-path=$HOME/logs/nginx/access.log \
   > --with-http_ssl_module
   $ make && make install
-  $ ln -s $HOME/apps/nginx-$VERSION $HOME/apps/nginx
+  $ ln -s $HOME/apps/nginx-$NGINX_VERSION $HOME/apps/nginx
   $ vi $HOME/apps/nginx/conf/nginx.conf
 server {
-         listen       10080;
-         server_name  cloud.hanseomgi.com;
+         listen       <PORT>;
+         server_name  <HOST NAME>;
          location / {
-             proxy_pass http://localhost:10081;
+             proxy_pass http://localhost:<PORT>;
              proxy_http_version 1.1;
              proxy_set_header Upgrade $http_upgrade;
              proxy_set_header Connection 'upgrade';
