@@ -28,30 +28,35 @@
     $ brew install nmap
     ```
     - ifconfig에서 broadcast로 나오는 IP를 확인하여 nmap으로 현재 접속한 라우터에 어떤 IP들이 있는지 확인해본다.
-      ```
-      $ ifconfig
-      ...
-      … broadcast 192.168.10.255
-      ...
-      $ nmap 192.168.10.1/24
-      ...
-      Nmap scan report for 192.168.10.105
-      ...
-      ```
+    ```
+    $ ifconfig
+    ...
+    … broadcast 192.168.10.255
+    ...
+    $ nmap 192.168.10.1/24
+    ...
+    Nmap scan report for 192.168.10.105
+    ...
+    ```
     - 위와 같이 스캔한 IP들이 출력된다. 라즈베리파이로 추정되는 IP로 접속해보자.
-      ```
-      $ ssh pi@<IP>
-      ```
+    ```
+    $ ssh pi@<IP>
+    ```
   - 모니터/키보드 연결해서 실행하기
     - LAN 선 꼽고 키보드 연결하고 HDMI 선 모니터에 연결하고 마지막에 전원 연결
     - 부팅이 완료되면 할당된 IP가 중간에 나타나니 적어두었다가 접속
-      ```$ ssh pi@<IP>```
+    ```
+    $ ssh pi@<IP>
+    ```
 
 
 ## Initial Setting
 
 ### 패스워드 변경
-  ```$ passwd```
+  - 접속이 된다면 일단 기본 패스워드부터 바꿔주자.
+  ```
+  $ passwd
+  ```
 
 ### apt-get 업데이트 및 업그레이드 (업그레이드는 시간이 좀 걸림)
   ```
@@ -60,10 +65,10 @@
   $ sudo apt-get -y install vim ntfs-3g git openjdk-8-jdk
   ```
   - 혹시 JDK가 설치되지 않으면 아래와 같이 repo 등록 후 다시 설치 시도
-    ```
-    sudo add-apt-repository ppa:openjdk-r/ppa
-    sudo apt-get update
-    ```
+  ```
+  sudo add-apt-repository ppa:openjdk-r/ppa
+  sudo apt-get update
+  ```
   - vim: remote shell에서 vim의 insert 모드에서 화살표/백스페이스키가 다른 문자로 출력되는 버그가 있는 경우 새로 설치하면 해결됨
   - ntfs-3g: NTFS format의 HDD나 외장하드를 연결해서 사용할 생각이라면 NTFS에 읽고 쓰기가 가능한 라이브러리가 필요함
   - git: 개발할거면… 당연히 필요하다.
@@ -72,22 +77,22 @@
 ### 개인환경 설정하기
   - [리눅스 개인환경 설정]() 참고
   - 한글 설정
-    ```
-    $ sudo raspi-config
-    5 Internationalisation Options        Set up language and regional settings
-    I1 Change Locale                      Set up language and regional settings
-    ```
-    - en_GB.UTF-8 UTF-8, en_US.UTF-8 UTF-8, ko_KR.UTF-8 UTF-8 세 개를 스페이스바로 선택 후 엔터. 디폴트는 영어로 해주자.(en_GB)
+  ```
+  $ sudo raspi-config
+  5 Internationalisation Options        Set up language and regional settings
+  I1 Change Locale                      Set up language and regional settings
+  ```
+  - en_GB.UTF-8 UTF-8, en_US.UTF-8 UTF-8, ko_KR.UTF-8 UTF-8 세 개를 스페이스바로 선택 후 엔터. 디폴트는 영어로 해주자.(en_GB)
 
 ### hostname 설정해주기
   - /etc/hostname 파일에서 raspberrypi를 원하는 이름으로 변경해주기
-    ```
-    $ sudo vi /etc/hostname
-    ```
+  ```
+  $ sudo vi /etc/hostname
+  ```
   - /etc/hosts 파일에서 로컬호스트에 raspberrypi로 매핑되어 있는 부분을 방금 설정한 이름으로 변경해주기
-    ```
-    $ sudo vi /etc/hosts
-    ```
+  ```
+  $ sudo vi /etc/hosts
+  ```
 
 ### micro SD card에서 파티셔닝되지 않은 남은 부분 사용할 수 있도록 세팅하기
     ```
