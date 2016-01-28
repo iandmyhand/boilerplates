@@ -1,5 +1,8 @@
 # Set up Raspberry Pi 2 B & B+ (On Mac OS X)
 
+## References
+- [라즈베리파이 활용법 주요 포스트 Rasplay & OpenMake](http://wiki.rasplay.org/doku.php)
+
 ## Raspbian 설치 및 부팅
 - 참고
   - B+ 모델까지는 Ubuntu가 공식지원하지 않기 때문에 다른 버전을 설치하거나 Raspbian을 설치해야 한다.
