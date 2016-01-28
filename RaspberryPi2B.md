@@ -192,11 +192,20 @@
     ```
     $ sudo mkdir /mnt/exdrive
     $ sudo mount -t xfs /dev/sda1 /mnt/exdrive
+    $ sudo chmod 777 /mnt/exdrive
     $ df -h
     Filesystem      Size  Used Avail Use% Mounted on
     /dev/sda1       1.9T   33M  1.9T   1% /mnt/exdrive
     ```
-    - 시스템 재시작 후에도 자동으로 인식할 수 있게 *fstab*의 마지막 줄에 마운트 내용을 추가해준다.
+    - 파일이 정상적으로 작성되는지 테스트해본다.
+    ```
+    $ mkdir -p /mnt/exdrive/tmp1/tmp2
+    $ echo "TEST" >> /mnt/exdrive/tmp1/tmp2/test.txt
+    $ cat /mnt/exdrive/tmp1/tmp2/test.txt
+    TEST
+    $ rm -r /mnt/exdrive/tmp1/
+    ```
+    - 시스템 재시작 후에도 자동으로 마운트되도록 *fstab*의 마지막 줄에 마운트 내용을 추가해준다.
     ```
     $ sudo vi /etc/fstab
     ...
