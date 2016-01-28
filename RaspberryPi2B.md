@@ -115,18 +115,24 @@ en_GB.UTF-8 UTF-8, en_US.UTF-8 UTF-8, ko_KR.UTF-8 UTF-8 세 개를 스페이스�
   http://m.cafe.naver.com/openrt/2913
 
 ### DDNS 설정 (DNSEver 이용하는 경우)
-  ```$ sudo vi /usr/local/bin/ddns.sh```
-  ```
-  #!/bin/sh
-  /usr/bin/wget -O - --http-user=<USER NAME> --http-passwd=<PASSWORD> 'http://dyna.dnsever.com/update.php?host[<HOST NAME>]'
-  ```
-  ```
-  $ sudo chmod +x /usr/local/bin/ddns.sh
-  $ sudo vi /etc/crontab
-  ```
-  ```*/5 * * * * root /usr/local/bin/ddns.sh > /dev/null 2>&1```
-  ```$ sudo vi /etc/rc.local```
-  ```/usr/local/bin/ddns.sh```
+  - DDNS에 IP 보고해줄 스크립트 생성
+    ```$ sudo vi /usr/local/bin/ddns.sh```
+    ```
+    #!/bin/sh
+    /usr/bin/wget -O - --http-user=<USER NAME> --http-passwd=<PASSWORD> 'http://dyna.dnsever.com/update.php?host[<HOST NAME>]'
+    ```
+  - 실행권한 부여
+    ```
+    $ sudo chmod +x /usr/local/bin/ddns.sh
+    $ sudo vi /etc/crontab
+    ```
+  - 아래와 같이 스트립트를 crontab에 추가
+    ```
+    */5 * * * * root /usr/local/bin/ddns.sh > /dev/null 2>&1
+    ```
+  - 접속 때마다 한 번씩 실행해주도록 추가
+    ```$ sudo vi /etc/rc.local```
+    ```/usr/local/bin/ddns.sh```
 
 ### Node 설치
   - Verify node isn't installed yet. It should print 'command not found'.
@@ -136,19 +142,22 @@ en_GB.UTF-8 UTF-8, en_US.UTF-8 UTF-8, ko_KR.UTF-8 UTF-8 세 개를 스페이스�
   - Install Node itself
     ```$ sudo apt-get install nodejs```
   - I then had to log out and log back in to get the path right.
-    ```$ node --version``` // should print version 0.10.38 or similar
-    ```$ npm --version``` // should print 1.4.28 or similar
-    ```$ sudo node --version``` // should work as well
+    ```
+    $ node --version // should print version 0.10.38 or similar
+    $ npm --version // should print 1.4.28 or similar
+    $ sudo node --version // should work as well
     $ sudo npm install -g express-generator pm2
     ```
-    node source directory로 이동
-    pm2로 node 관리 (명령어는 찾아보자)
+  - node source directory로 이동
+  - pm2로 node 관리 (명령어는 찾아보자)
     ```
-    $ pm2 start
-- git 설치
-- git automating deployment
+    $ pm2 start server.js
+    ```
+
+### git automating deployment
   https://developer.github.com/guides/automating-deployments-to-integrators/
-- Nginx 설치
+
+### Nginx 설치
   ```
   $ sudo apt-get -y install curl build-essential libpcre3-dev libpcre++-dev zlib1g-dev libcurl4-openssl-dev libssl-dev
   $ NGINX_VERSION=1.8.0
@@ -164,16 +173,16 @@ en_GB.UTF-8 UTF-8, en_US.UTF-8 UTF-8, ko_KR.UTF-8 UTF-8 세 개를 스페이스�
   $ make && make install
   $ ln -s $HOME/apps/nginx-$NGINX_VERSION $HOME/apps/nginx
   $ vi $HOME/apps/nginx/conf/nginx.conf
-server {
-         listen       <PORT>;
-         server_name  <HOST NAME>;
-         location / {
-             proxy_pass http://localhost:<PORT>;
-             proxy_http_version 1.1;
-             proxy_set_header Upgrade $http_upgrade;
-             proxy_set_header Connection 'upgrade';
-             proxy_set_header Host $host;
-             proxy_cache_bypass $http_upgrade;
-         }
-}
-```
+  server {
+           listen       <PORT>;
+           server_name  <HOST NAME>;
+           location / {
+               proxy_pass http://localhost:<PORT>;
+               proxy_http_version 1.1;
+               proxy_set_header Upgrade $http_upgrade;
+               proxy_set_header Connection 'upgrade';
+               proxy_set_header Host $host;
+               proxy_cache_bypass $http_upgrade;
+           }
+  }
+  ```
