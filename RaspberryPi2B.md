@@ -165,7 +165,7 @@
   ```
 
 ### 분산파일시스템 설치
-  - 외장하드는 XFS로 다시 포맷 후 언마운트 한다.
+  - 외장하드는 언마운트 후 XFS로 다시 포맷한다.
     - 기존 내용 백업(용량이 크다면 다른 곳에 백업한다. 8GB짜리 SD카드에 운영체제 설치 등을 했다면 대략 6GB밖에 안남는다.)
     ```
     $ cd $HOME
@@ -211,8 +211,11 @@
     ...
     /dev/sda1 /mnt/exdrive xfs defaults 0 0
     ```
-    - [참고](https://linhost.info/2012/08/format-a-volume-as-xfs-in-debian-and-ubuntu/)
-  - https://www.gluster.org/
+  - GlusterFS 설치
+  - References
+    - [xfs 포맷하기](https://linhost.info/2012/08/format-a-volume-as-xfs-in-debian-and-ubuntu/)
+    - [GlusterFS 홈페이지](https://www.gluster.org/)
+    - [GlusterFS 설치하기](http://gluster.readthedocs.org/en/latest/Install-Guide/Common_criteria/#getting-started)
 
 ### samba
   http://m.cafe.naver.com/openrt/2913
