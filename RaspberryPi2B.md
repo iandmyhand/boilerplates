@@ -62,7 +62,7 @@
   ```
   $ sudo apt-get update
   $ sudo apt-get upgrade
-  $ sudo apt-get -y install vim ntfs-3g git openjdk-8-jdk
+  $ sudo apt-get -y install vim ntfs-3g xfsprogs git openjdk-8-jdk
   ```
   - 혹시 JDK가 설치되지 않으면 아래와 같이 repo 등록 후 다시 설치 시도
   ```
@@ -70,7 +70,8 @@
   sudo apt-get update
   ```
   - vim: remote shell에서 vim의 insert 모드에서 화살표/백스페이스키가 다른 문자로 출력되는 버그가 있는 경우 새로 설치하면 해결됨
-  - ntfs-3g: NTFS format의 HDD나 외장하드를 연결해서 사용할 생각이라면 NTFS에 읽고 쓰기가 가능한 라이브러리가 필요함
+  - ntfs-3g: NTFS format의 HDD나 외장하드를 연결해서 사용할 생각이라면 NTFS에 읽고 쓰기가 가능한 라이브러리가 필요함. GlusterFS를 쓸거라면 다시 포맷해서 쓰면 되지만, 기존 데이터를 백업해두고 싶다면 설치 후 백업을 하자.
+  - xfsprogs: HDD나 외장하드를 분산파일시스템으로 묶어 쓰고 싶고, GlusterFS를 쓸거라면 XFS로 포맷해주는 것을 추천.
   - git: 개발할거면… 당연히 필요하다.
   - openjdk-8-jdk: java로 개발하는 경우 필요. (Oracle JDK는 business에서 사용하려면 사용료를 지불해야 하므로 개발 시작부터 OpenJDK를 사용하는 것을 추천)
 
@@ -101,7 +102,7 @@
     - *-l* 옵션을 사용하여 우선 기존 내용을 확인 후 작업한다.
     ```
     $ sudo fdisk -l
-    $ sudo fdisk -u -c /dev/mmcblk0
+    $ sudo fdisk -u -c /dev/mmcblk0  # u(units): 단위를 출력해준다. c(compatibility): dos/nondos 모드를 선택한다.
     ```
     - p 로 영역 알아보기. Linux로 할당되어 있는 파티션을 수정해주어야 함
     - d -> 2 기존에 Linux로 할당되어 있는 파티션 삭제
@@ -113,7 +114,40 @@
     ```
 
 ### 외장하드 마운트
-  - http://www.modmypi.com/blog/how-to-mount-an-external-hard-drive-on-the-raspberry-pi-raspian
+  - 마운트
+    - 현재 라즈베리파이에 연결된 장치를 blkid로 검색해본다. 이거 내 외장하드다 싶은 이름이 보일 것이다.
+    ```
+    $ sudo blkid
+    ...
+    dev/sda1: LABEL="My Book" UUID="ABCD" TYPE="ntfs" PARTUUID="4abc3210-01"
+    ...
+    ```
+    - 외장하드의 boot name을 확인해보자.
+    ```
+    $ sudo fdisk –l
+    ...
+    Device     Boot Start        End    Sectors  Size Id Type
+    /dev/sda1        2048 3906963455 3906961408  1.8T  7 HPFS/NTFS/exFAT
+    ...
+    ```
+    - /mnt 폴더에 마운트 해준다.
+    ```
+    $ sudo mount /dev/sda1 /mnt
+    ```
+    - 읽고 쓸 수 있도록 권한을 변경해준다.
+    ```
+    $ sudo chmod 775 /mnt
+    ```
+      - ntfs 라이브러리를 설치하지 않고 마운트했다면 권한 수정에 실패한다. 이 경우 ```$ sudo umount /mnt```로 언마운트 후 ntfs를 설치하고 다시 해보자.
+    - 잘되었는지 테스트해보자.
+    ```
+    $ cd /mnt
+    $ touch test.txt
+    $ echo "TEST" >> test.txt
+    $ cat test.txt
+    TEST
+    ```
+    - [참고](http://www.modmypi.com/blog/how-to-mount-an-external-hard-drive-on-the-raspberry-pi-raspian)
 
 ### 설정 반영
 - hostname 및 파티셔닝 변경설정을 적용하기 위해 재부팅
@@ -131,6 +165,17 @@
   ```
 
 ### 분산파일시스템 설치
+  - 외장하드는 XFS로 다시 포맷 후 언마운트 한다.
+    - 기존 내용 백업(용량이 크다면 다른 곳에 백업한다. 8GB짜리 SD카드에 운영체제 설치 등을 했다면 대략 6GB밖에 안남는다.)
+    ```
+    $ cd $HOME
+    $ mkdir backups
+    $ cd backups
+    $ cp /mnt/* ./
+    $ sudo umount /mnt
+    ```
+    
+    - [참고](https://linhost.info/2012/08/format-a-volume-as-xfs-in-debian-and-ubuntu/)
   - https://www.gluster.org/
 
 ### samba
