@@ -95,16 +95,18 @@
   ```
 
 ### micro SD card에서 파티셔닝되지 않은 남은 부분 사용할 수 있도록 세팅하기
-    ```
-    $ sudo fdisk -l
-    $ sudo fdisk -u -c /dev/mmcblk0
-    p 로 영역 알아보기. Linux로 할당되어 있는 파티션을 수정해주어야 함
-    d -> 2 기존에 Linux로 할당되어 있는 파티션 삭제
-    n -> p(primary) -> 2(기존에 할당되어 있던 파티션 번호 -> w (반영) -> q (종료)
-    $ sudo resize2fs /dev/mmcblk0p2
-    $ sudo raspi-config
-    -> 1 Expand Filesystem (선택하면 rebooting 뒤에 반영된다는 메시지가 뜸)
-    ```
+  ```
+  $ sudo fdisk -l
+  $ sudo fdisk -u -c /dev/mmcblk0
+  ```
+  - p 로 영역 알아보기. Linux로 할당되어 있는 파티션을 수정해주어야 함
+  - d -> 2 기존에 Linux로 할당되어 있는 파티션 삭제
+  - n -> p(primary) -> 2(기존에 할당되어 있던 파티션 번호 -> w (반영) -> q (종료)
+  ```
+  $ sudo resize2fs /dev/mmcblk0p2
+  $ sudo raspi-config
+  -> 1 Expand Filesystem (선택하면 rebooting 뒤에 반영된다는 메시지가 뜸)
+  ```
 
 ### 외장하드 마운트
   - http://www.modmypi.com/blog/how-to-mount-an-external-hard-drive-on-the-raspberry-pi-raspian
