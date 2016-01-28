@@ -12,9 +12,9 @@
   alias ll='ls -alvhGF'
   ```
 
-  ## Appendix
-    - bashrc system 기본 설정을 바꾸려면? 
-      ```$ sudo vi /etc/bash.bashrc```
+### Appendix
+  - bashrc system 기본 설정을 바꾸려면? 
+    ```$ sudo vi /etc/bash.bashrc```
 
 
 # ~/.vimrc
@@ -37,9 +37,9 @@
   set ai
   ```
   
-  ## Appendix
-    - vimrc system 기본 설정을 바꾸려면?
-      ```$ sudo vi /etc/vim/vimrc.local```
+### Appendix
+  - vimrc system 기본 설정을 바꾸려면?
+    ```$ sudo vi /etc/vim/vimrc.local```
 
 
 # ~/.inputrc
