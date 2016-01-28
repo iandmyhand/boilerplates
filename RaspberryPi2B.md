@@ -69,16 +69,22 @@
 ### 개인환경 설정하기
   - [리눅스 개인환경 설정]() 참고
   - 한글 설정
-    ```$ sudo raspi-config```
-5 Internationalisation Options        Set up language and regional settings
-I1 Change Locale                      Set up language and regional settings
-en_GB.UTF-8 UTF-8, en_US.UTF-8 UTF-8, ko_KR.UTF-8 UTF-8 세 개를 스페이스바로 선택 후 엔터. 디폴트는 영어로 해주자.(en_GB)
+    ```
+    $ sudo raspi-config
+    5 Internationalisation Options        Set up language and regional settings
+    I1 Change Locale                      Set up language and regional settings
+    ```
+    - en_GB.UTF-8 UTF-8, en_US.UTF-8 UTF-8, ko_KR.UTF-8 UTF-8 세 개를 스페이스바로 선택 후 엔터. 디폴트는 영어로 해주자.(en_GB)
 
 ### hostname 설정해주기
   - /etc/hostname 파일에서 raspberrypi를 원하는 이름으로 변경해주기
-    ```$ sudo vi /etc/hostname```
+    ```
+    $ sudo vi /etc/hostname
+    ```
   - /etc/hosts 파일에서 로컬호스트에 raspberrypi로 매핑되어 있는 부분을 방금 설정한 이름으로 변경해주기
-    ```$ sudo vi /etc/hosts```
+    ```
+    $ sudo vi /etc/hosts
+    ```
 
 ### micro SD card에서 파티셔닝되지 않은 남은 부분 사용할 수 있도록 세팅하기
     ```
@@ -97,7 +103,9 @@ en_GB.UTF-8 UTF-8, en_US.UTF-8 UTF-8, ko_KR.UTF-8 UTF-8 세 개를 스페이스�
 
 ### 설정 반영
 - hostname 및 파티셔닝 변경설정을 적용하기 위해 재부팅
-  ```$ sudo reboot```
+  ```
+  $ sudo reboot
+  ```
 - 재접속하여 hostname과 파티셔닝이 정상적으로 반영되었는지 확인
   ```
   $ hostname
@@ -116,8 +124,8 @@ en_GB.UTF-8 UTF-8, en_US.UTF-8 UTF-8, ko_KR.UTF-8 UTF-8 세 개를 스페이스�
 
 ### DDNS 설정 (DNSEver 이용하는 경우)
   - DDNS에 IP 보고해줄 스크립트 생성
-    ```$ sudo vi /usr/local/bin/ddns.sh```
     ```
+    $ sudo vi /usr/local/bin/ddns.sh
     #!/bin/sh
     /usr/bin/wget -O - --http-user=<USER NAME> --http-passwd=<PASSWORD> 'http://dyna.dnsever.com/update.php?host[<HOST NAME>]'
     ```
@@ -131,8 +139,10 @@ en_GB.UTF-8 UTF-8, en_US.UTF-8 UTF-8, ko_KR.UTF-8 UTF-8 세 개를 스페이스�
     */5 * * * * root /usr/local/bin/ddns.sh > /dev/null 2>&1
     ```
   - 접속 때마다 한 번씩 실행해주도록 추가
-    ```$ sudo vi /etc/rc.local```
-    ```/usr/local/bin/ddns.sh```
+    ```
+    $ sudo vi /etc/rc.local
+    /usr/local/bin/ddns.sh
+    ```
 
 ### Node 설치
   - Verify node isn't installed yet. It should print 'command not found'.
