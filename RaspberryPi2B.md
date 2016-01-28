@@ -86,11 +86,12 @@
     - en_GB.UTF-8 UTF-8, en_US.UTF-8 UTF-8, ko_KR.UTF-8 UTF-8 세 개를 스페이스바로 선택 후 엔터. 디폴트는 영어로 해주자.(en_GB)
 
 ### hostname 설정해주기
-  - /etc/hostname 파일에서 raspberrypi를 원하는 이름으로 변경해주기
+  - */etc/hostname*과 */etc/hosts* 파일 수정
+    - /etc/hostname 파일에서 raspberrypi를 원하는 이름으로 변경해주기
     ```
     $ sudo vi /etc/hostname
     ```
-  - /etc/hosts 파일에서 로컬호스트에 raspberrypi로 매핑되어 있는 부분을 방금 설정한 이름으로 변경해주기
+    - /etc/hosts 파일에서 로컬호스트에 raspberrypi로 매핑되어 있는 부분을 방금 설정한 이름으로 변경해주기
     ```
     $ sudo vi /etc/hosts
     ```
