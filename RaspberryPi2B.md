@@ -174,7 +174,7 @@
     $ cp /mnt/* ./
     $ sudo umount /mnt
     ```
-    - 파티셔닝을 재설정한다.
+    - 파티셔닝을 하나로 합친다.
     ```
     $ sudo fdisk -u -c /dev/sda1  # u(units): 단위를 출력해준다. c(compatibility): dos/nondos 모드를 선택한다.
     ```
@@ -186,9 +186,9 @@
     - w (반영) -> q (종료)
     - mkfs.xfs를 이용하여 xfs로 다시 포맷한다.(-f(force): 강제 포맷(기존 내용 삭제). -L(Label): 디스크에 이름 붙여주기)
     ```
-    $ sudo mkfs.xfs -f -L "My Book" /dev/sda1
+    $ sudo mkfs.xfs -f -i size=512 -n size=8192 -L "My Book" /dev/sda1
     ```
-    - 마운트 포인트 생성 후 생성한 곳으로 마운트 해보고 *df*를 이용해 정상적으로 마운트 되었는지 확인해본다.
+    - 마운트 포인트 생성 후 생성한 곳으로 마운트 해보고 *df*를 이용해 마운트 되었는지 확인해본다.
     ```
     $ sudo mkdir /mnt/exdrive
     $ sudo mount -t xfs /dev/sda1 /mnt/exdrive
@@ -212,6 +212,26 @@
     /dev/sda1 /mnt/exdrive xfs defaults 0 0
     ```
   - GlusterFS 설치
+    ```
+    $ sudo apt-get -y install Automake Autoconf Libtool flex Bison OpenSSL libxml2 lvm2
+    
+         libaio libibverbs librdmacm readline  glib2 liburcu cmocka libacl sqlite
+       
+E: Unable to locate package libaio
+E: Unable to locate package libibverbs
+E: Unable to locate package librdmacm
+E: Unable to locate package readline
+E: Unable to locate package glib2
+E: Unable to locate package liburcu
+E: Unable to locate package cmocka
+E: Unable to locate package libacl
+
+
+    $ mkdir -p /mnt/exdrive/brick
+    $ cd $HOME/tmp
+    $ wget -nd -nc -r -A.deb http://download.gluster.org/pub/gluster/glusterfs/LATEST/Debian/jessie/
+    $ dpkg -i 
+    ```
   - References
     - [xfs 포맷하기](https://linhost.info/2012/08/format-a-volume-as-xfs-in-debian-and-ubuntu/)
     - [GlusterFS 홈페이지](https://www.gluster.org/)
