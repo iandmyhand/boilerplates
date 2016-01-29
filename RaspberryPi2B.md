@@ -58,16 +58,64 @@
   $ passwd
   ```
 
-### apt-get 업데이트 및 업그레이드 (업그레이드는 시간이 좀 걸림)
+### micro SD card에서 파티셔닝되지 않은 남은 부분 사용할 수 있도록 세팅하기
+  - *fdisk*를 이용하여 파티셔닝을 다시 해준다.
+    - *-l* 옵션을 사용하여 우선 기존 내용을 확인 후 작업한다.
+    ```
+    $ sudo fdisk -l
+    $ sudo fdisk -u -c /dev/mmcblk0  # u(units): 단위를 출력해준다. c(compatibility): dos/nondos 모드를 선택한다.
+    ```
+    - p 로 영역 알아보기. Linux로 할당되어 있는 파티션을 수정해주어야 함
+    - d -> 2 기존에 Linux로 할당되어 있는 파티션 삭제
+    - n -> p(primary) -> 2(기존에 할당되어 있던 파티션 번호
+    - First sector: p를 입력했을 때 출력된 1번 파티션의 End + 1을 입력한다. e.g. 131071이 End였다면 131072를 입력.
+    - Last sector: Default가 max값으로 잡혀있을 것이다. 그냥 Return.
+    - w (반영) -> q (종료) (w 입력 시 error가 발생하며 튕길 수도 있다. 파티셔닝은 완료된 상태이니 걱정말자.)
+    ```
+    $ sudo resize2fs /dev/mmcblk0p2
+    $ sudo raspi-config
+    -> 1 Expand Filesystem (선택하면 rebooting 뒤에 반영된다는 메시지가 뜸)
+    OK
+    Esc
+    ```
+
+### hostname 설정해주기
+  - */etc/hostname*과 */etc/hosts* 파일 수정
+    - /etc/hostname 파일에서 raspberrypi를 원하는 이름으로 변경해주기
+    ```
+    $ sudo vi /etc/hostname
+    ```
+    - /etc/hosts 파일에서 로컬호스트에 raspberrypi로 매핑되어 있는 부분을 방금 설정한 이름으로 변경해주기
+    ```
+    $ sudo vi /etc/hosts
+    ```
+
+### hostname & 파티셔닝 설정 반영
+    - 변경설정을 적용하기 위해 재부팅
+    ```
+    $ sudo reboot
+    ```
+    - 재접속하여 hostname 및 파티셔닝이 정상적으로 반영되었는지 확인
+    ```
+    $ hostname
+    myhostname
+    $ df -h
+    Filesystem      Size  Used Avail Use% Mounted on
+    /dev/root       7.2G  1.3G  5.7G  18% /
+    /dev/sda1      1953480700  416936 1953063764   1% /mnt
+    ```
+
+### apt-get 업데이트 및 업그레이드
+  - 업그레이드는 시간이 좀 걸린다. 명령어 날려두고 커피 한 잔 하고 오자.
   ```
   $ sudo apt-get update && sudo apt-get upgrade -y
   $ sudo apt-get -y install vim xfsprogs git openjdk-8-jdk
   ```
-  - 혹시 JDK가 설치되지 않으면 아래와 같이 repo 등록 후 다시 설치 시도
-  ```
-  sudo add-apt-repository ppa:openjdk-r/ppa
-  sudo apt-get update
-  ```
+    - 혹시 JDK가 설치되지 않으면 아래와 같이 repo 등록 후 다시 설치 시도
+    ```
+    $ sudo add-apt-repository ppa:openjdk-r/ppa
+    $ sudo apt-get update
+    ```
   - vim: remote shell에서 vim의 insert 모드에서 화살표/백스페이스키가 다른 문자로 출력되는 버그가 있는 경우 새로 설치하면 해결됨
   - xfsprogs: HDD나 외장하드를 분산파일시스템으로 묶어 쓰고 싶고, GlusterFS를 쓸거라면 XFS로 포맷해주는 것을 추천.
   - git: 개발할거면… 당연히 필요하다.
@@ -83,33 +131,6 @@
     I1 Change Locale                      Set up language and regional settings
     ```
     - en_GB.UTF-8 UTF-8, en_US.UTF-8 UTF-8, ko_KR.UTF-8 UTF-8 세 개를 스페이스바로 선택 후 엔터. 디폴트는 영어로 해주자.(en_GB)
-
-### hostname 설정해주기
-  - */etc/hostname*과 */etc/hosts* 파일 수정
-    - /etc/hostname 파일에서 raspberrypi를 원하는 이름으로 변경해주기
-    ```
-    $ sudo vi /etc/hostname
-    ```
-    - /etc/hosts 파일에서 로컬호스트에 raspberrypi로 매핑되어 있는 부분을 방금 설정한 이름으로 변경해주기
-    ```
-    $ sudo vi /etc/hosts
-    ```
-
-### micro SD card에서 파티셔닝되지 않은 남은 부분 사용할 수 있도록 세팅하기
-  - *fdisk*를 이용하여 파티셔닝을 다시 해준다.
-    - *-l* 옵션을 사용하여 우선 기존 내용을 확인 후 작업한다.
-    ```
-    $ sudo fdisk -l
-    $ sudo fdisk -u -c /dev/mmcblk0  # u(units): 단위를 출력해준다. c(compatibility): dos/nondos 모드를 선택한다.
-    ```
-    - p 로 영역 알아보기. Linux로 할당되어 있는 파티션을 수정해주어야 함
-    - d -> 2 기존에 Linux로 할당되어 있는 파티션 삭제
-    - n -> p(primary) -> 2(기존에 할당되어 있던 파티션 번호 -> w (반영) -> q (종료)
-    ```
-    $ sudo resize2fs /dev/mmcblk0p2
-    $ sudo raspi-config
-    -> 1 Expand Filesystem (선택하면 rebooting 뒤에 반영된다는 메시지가 뜸)
-    ```
 
 ### 외장하드 마운트
   - NTFS format의 HDD나 외장하드를 연결해서 사용할 생각이라면 NTFS에 읽고 쓰기가 가능한 라이브러리가 필요함. GlusterFS를 쓸거라면 다시 포맷해서 쓰면 되지만, 기존 데이터를 백업해두고 싶다면 설치 후 백업을 하자.
@@ -159,21 +180,6 @@
     ```
     - [참고](http://www.modmypi.com/blog/how-to-mount-an-external-hard-drive-on-the-raspberry-pi-raspian)
 
-### 설정 반영
-- hostname 및 파티셔닝 변경설정을 적용하기 위해 재부팅
-  ```
-  $ sudo reboot
-  ```
-- 재접속하여 hostname과 파티셔닝이 정상적으로 반영되었는지 확인
-  ```
-  $ hostname
-  myhostname
-  $ df -h
-  Filesystem      Size  Used Avail Use% Mounted on
-  /dev/root       7.2G  1.3G  5.7G  18% /
-  /dev/sda1      1953480700  416936 1953063764   1% /mnt
-  ```
-
 ### 분산파일시스템 GlusterFS 설치
   - 외장하드는 언마운트 후 XFS로 다시 포맷한다.
     - 기존 마운트를 해제한다.
@@ -216,19 +222,124 @@
     ...
     /dev/sda1 /mnt/exdrive xfs defaults 0 0
     ```
-  - GlusterFS 설치 (sudo apt-cache search glusterfs 날려보면 이미 repo에 다 있다.)
+  - GlusterFS 설치 (apt-cache search glusterfs 날려보면 이미 repo에 다 있다.)
     ```
+    $ sudo apt-get install -y glusterfs-server
+    $ sudo chmod -R 777 /var/log/glusterfs/
     $ mkdir -p /mnt/exdrive/brick
-    $ 
     ```
-  - References
+
+#### GlusterFS Cluster Mode
+  - 각 서버에서 다른 서버를 등록한다.
+    ```
+    $ sudo gluster peer probe <HOST NAME>
+    peer probe: success.
+    ```
+  - 모든 서버에서 gluster peer probe 등록을 했으면, 상태를 체크해본다.
+    ```
+    $ sudo gluster peer status
+    Number of Peers: 1
+
+    Hostname: raspberry
+    Uuid: 0391c68b-a3ed-4e77-b3d1-a2f9e7a9d8c2
+    State: Peer in Cluster (Connected)
+    ```
+  - 
+    ```
+    $ sudo gluster volume create glusv0 replica 2 transport tcp rasp01:/mnt/exdrive/brick rasp02:/mnt/exdrive/brick
+    ```
+
+#### GlusterFS Stand Alone Mode
+  - Gluster volume을 생성한다.
+  ```
+  $ sudo gluster volume create glusv0 transport tcp rasp01:/mnt/exdrive/brick
+  volume create: glusv0: success: please start the volume to access data
+  $ sudo gluster volume start glusv0
+  volume start: glusv0: success
+  $ sudo gluster volume info
+
+  Volume Name: glusv0
+  Type: Distribute
+  Volume ID: 003a5e43-0373-462e-af04-bf1ce55ff776
+  Status: Started
+  Number of Bricks: 1
+  Transport-type: tcp
+  Bricks:
+  Brick1: rasp01:/mnt/exdrive/brick
+  $ sudo vi /etc/fstab
+  ...
+  <HOST NAME>:/glusv0  /home/pi/gluster  glusterfs defaults,_netdev  0       0
+  $ mkdir $HOME/gluster
+  $ sudo mount.glusterfs <HOST NAME>:/glusv0 $HOME/gluster
+  $ sudo mount
+  ```
+  - Test
+  ```
+  $ touch $HOME/gluster/test.txt
+  $ echo "TEST" >> $HOME/gluster/test.txt
+  $ ls /mnt/exdrive/brick
+  total 4.0K
+  drwxr-xr-x 3 pi   38 Jan 28 16:18 ./
+  drwxrwxrwx 3 root 18 Jan 28 09:41 ../
+  drw------- 7 root 70 Jan 28 16:18 .glusterfs/
+  -rw-r--r-- 2 pi    5 Jan 28 16:19 test.txt
+  $ cat /mnt/exdrive/brick/test.txt
+  TEST
+  $ sudo reboot
+  $ cat $HOME/gluster/test.txt
+  TEST
+  ```
+
+#### References
     - [xfs 포맷하기](https://linhost.info/2012/08/format-a-volume-as-xfs-in-debian-and-ubuntu/)
     - [GlusterFS 홈페이지](https://www.gluster.org/)
     - [GlusterFS 설치하기](http://banoffeepiserver.com/glusterfs/set-up-glusterfs-on-two-nodes.html): 설치 부분만 참고.
     - [GlusterFS 세팅하기](http://gluster.readthedocs.org/en/latest/Install-Guide/Common_criteria/#getting-started)
 
 ### samba
-  http://m.cafe.naver.com/openrt/2913
+  - samba는 Windows에 연결하기 위해 필요
+    - samba 설치
+    ```
+    $ sudo apt-get install -y samba samba-common-bin
+    ```
+    - samba 계정은 linux 계정과 동일해야함. 
+    - 신규유저 추가하기 전에 skel을 설정해두었던 스크립트로 변경해주기
+    ```
+    $ sudo cp $HOME/.bashrc /etc/skel/
+    ```
+    - 삼바용 Linux 계정 추가
+    ```
+    $ sudo adduser --group samba
+    Adding group `samba' (GID 1002) ...
+    Done.
+    $ sudo adduser --home /home/samba --gid 1002 samba
+    Adding user `samba' ...
+    Adding new user `samba' (1001) with group `samba' ...
+    Creating home directory `/home/samba' ...
+    Copying files from `/etc/skel' ...
+    Enter new UNIX password:
+    Retype new UNIX password:
+    passwd: password updated successfully
+    Changing the user information for samba
+    Enter the new value, or press ENTER for the default
+      Full Name []: <이름 입력>
+      Room Number []: <아무거나 입력>
+      Work Phone []: <아무거나 입력>
+      Home Phone []: <아무거나 입력>
+      Other []: <아무거나 입력>
+    Is the information correct? [Y/n] Y
+    $ sudo mkdir /home/samba/gluster
+    $ sudo mount.glusterfs <HOST NAME>:/glusv0 /home/samba/gluster
+    $ sudo mount
+    $ sudo chown samba:samba /home/samba/gluster/
+    ```
+    - samba 계정 추가
+    ```
+    $ sudo smbpasswd -a samba
+    ```
+  - References
+    - [Exporting Gluster volumes through samba](http://www.gluster.org/community/documentation/index.php/Gluster_3.2:_Exporting_Gluster_Volumes_Through_Samba)
+    - [\[버섯돌이의 라즈베리 기초\] 03 개발을 위한 SAMBA 환경 꾸미기](http://m.cafe.naver.com/openrt/2913)
 
 ### DDNS 설정 (DNSEver 이용하는 경우)
   - DDNS에 IP 보고해줄 스크립트 생성
