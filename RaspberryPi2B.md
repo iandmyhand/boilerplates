@@ -395,6 +395,8 @@
   - References
     - [Exporting Gluster volumes through samba](http://www.gluster.org/community/documentation/index.php/Gluster_3.2:_Exporting_Gluster_Volumes_Through_Samba)
     - [Setting up a SAMBA Server on Raspberry Pi](http://theurbanpenguin.com/wp/index.php/setting-up-a-samba-server-on-raspberry-pi/)
+    - http://superuser.com/questions/347492/how-do-i-connect-to-an-smb-share
+    - [맥에서 접속하기](https://support.apple.com/en-us/HT204445)
 
 ### DDNS 설정 (DNSEver 이용하는 경우)
   - DDNS에 IP 보고해줄 스크립트 생성
