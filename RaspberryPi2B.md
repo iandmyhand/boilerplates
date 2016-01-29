@@ -272,6 +272,7 @@
   $ mkdir $HOME/gluster
   $ sudo mount.glusterfs <HOST NAME>:/glusv0 $HOME/gluster
   $ sudo mount
+  $ sudo chmod 777 $HOME/gluster/
   ```
   - Test
   ```
@@ -300,12 +301,15 @@
   - samba는 Windows에 연결하기 위해 필요
     - samba 설치
     ```
-    $ sudo apt-get install -y samba samba-common-bin
+    $ sudo apt-get install -y samba samba-common-bin smbclient
+    $ sudo chmod -R 777 /var/log/samba/
     ```
-    - samba 계정은 linux 계정과 동일해야함. 
+    - samba 계정이름은 linux 계정이름과 동일해야함. 
     - 신규유저 추가하기 전에 skel을 설정해두었던 스크립트로 변경해주기
     ```
     $ sudo cp $HOME/.bashrc /etc/skel/
+    $ sudo cp $HOME/.vimrc /etc/skel/
+    $ sudo cp $HOME/.inputrc /etc/skel/
     ```
     - 삼바용 Linux 계정 추가
     ```
@@ -333,13 +337,64 @@
     $ sudo mount
     $ sudo chown samba:samba /home/samba/gluster/
     ```
-    - samba 계정 추가
+    - samba 계정 추가(방금 추가한 linux 계정명으로 입력한다.)
     ```
     $ sudo smbpasswd -a samba
+    New SMB password:
+    Retype new SMB password:
+    Added user samba.
+    ```
+    - samba 환경 설정 (smb.conf 가장 하단에 추가)
+    ```
+    $ sudo vi /etc/samba/smb.conf
+    [samba]
+    comment = Raspberry Pi Samba Server
+    path = /home/samba/gluster
+    writable = yes
+    browseable = yes
+    ```
+      - path가 로그인 시 home 폴더로 보임
+    - 환경 설정 정상적으로 적용되었는지 확인
+    ```
+    $ testparm
+    Load smb config files from /etc/samba/smb.conf
+    Processing section "[homes]"
+    Processing section "[printers]"
+    Processing section "[print$]"
+    Processing section "[samba]"
+    Loaded services file OK.
+    Server role: ROLE_STANDALONE
+    Press enter to see a dump of your service definitions
+    ```
+    - 실행
+    ```
+    $ sudo smbd start
+    $ sudo nmbd start
+    ```
+    - Test
+    ```
+    $ smbclient -L localhost -U samba
+    Enter samba's password:
+    Domain=[WORKGROUP] OS=[Unix] Server=[Samba 4.1.17-Debian]
+
+      Sharename       Type      Comment
+      ---------       ----      -------
+      samba           Disk      Raspberry Pi Samba Server
+      print$          Disk      Printer Drivers
+      IPC$            IPC       IPC Service (Samba 4.1.17-Debian)
+    Domain=[WORKGROUP] OS=[Unix] Server=[Samba 4.1.17-Debian]
+
+      Server               Comment
+      ---------            -------
+      HOST NAME            Samba 4.1.17-Debian
+
+      Workgroup            Master
+      ---------            -------
+      WORKGROUP            HOST NAME
     ```
   - References
     - [Exporting Gluster volumes through samba](http://www.gluster.org/community/documentation/index.php/Gluster_3.2:_Exporting_Gluster_Volumes_Through_Samba)
-    - [\[버섯돌이의 라즈베리 기초\] 03 개발을 위한 SAMBA 환경 꾸미기](http://m.cafe.naver.com/openrt/2913)
+    - [Setting up a SAMBA Server on Raspberry Pi](http://theurbanpenguin.com/wp/index.php/setting-up-a-samba-server-on-raspberry-pi/)
 
 ### DDNS 설정 (DNSEver 이용하는 경우)
   - DDNS에 IP 보고해줄 스크립트 생성
