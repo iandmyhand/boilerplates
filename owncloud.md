@@ -13,3 +13,9 @@ php5-mcrypt \
 php5-imagick \
 
 ```
+
+## References
+- [owncloud](https://doc.owncloud.org/server/8.2/admin_manual/installation/source_installation.html)
+  - [command line installation](https://doc.owncloud.org/server/8.2/admin_manual/installation/command_line_installation.html)
+- Nginx
+  - [Nginx configuration](https://doc.owncloud.org/server/7.0/admin_manual/installation/nginx_configuration.html)
