@@ -1,18 +1,18 @@
-# ~/.bashrc
+# [~/.bashrc](https://github.com/iandmyhand/settings/blob/master/UNIX/.bashrc)
 
 ### Appendix
   - bashrc system default setting
     ```$ sudo vi /etc/bash.bashrc```
 
 
-# [~/.vimrc](https://github.com/iandmyhand/settings/blob/master/.vimrc)
+# [~/.vimrc](https://github.com/iandmyhand/settings/blob/master/UNIX/.vimrc)
   
 ### Appendix
   - vimrc system default setting
     ```$ sudo vi /etc/vim/vimrc.local```
 
 
-# [~/.inputrc](https://github.com/iandmyhand/settings/blob/master/.inputrc)
+# [~/.inputrc](https://github.com/iandmyhand/settings/blob/master/UNIX/.inputrc)
   - for Korean Language
   
 
