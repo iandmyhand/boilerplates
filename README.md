@@ -2,9 +2,11 @@
 My favorite settings for Mac OS X, Linux, etc.
 
 
-## [Mac OS X](https://github.com/iandmyhand/settings/blob/master/MacOSX.md)
+## Mac OS X
+- [Mac OS X Settings](https://github.com/iandmyhand/settings/blob/master/MacOSX.md)
 
-## [Unix](https://github.com/iandmyhand/settings/blob/master/Unix.md)
+## Unix
+- [Unix Settings](https://github.com/iandmyhand/settings/blob/master/Unix.md)
 
 ## Miscellaneous 
 #### Raspberry Pi
