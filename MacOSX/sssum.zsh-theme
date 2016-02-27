@@ -10,7 +10,7 @@ RESET="%{$reset_color%}"
 YELLOW="%{$fg_bold[yellow]%}"
 YELLOW_NB="%{$fg_no_bold[yellow]%}"
 
-PROMPT='$INDICATOR_COLOR» $CYAN_NB|%(!.$RED_NB.%{$fg_no_bold[green]%})%n$GREEN_NB@$HOSTNAME_COLOR%m$CYAN_NB| $BLUE%2d$(git_prompt_info)$(git_prompt_status)$RESET '
+PROMPT='$INDICATOR_COLOR» $BLUE%2d$(git_prompt_info)$(git_prompt_status)$RESET '
 
 ZSH_THEME_GIT_PROMPT_ADDED="+"
 ZSH_THEME_GIT_PROMPT_AHEAD="↑"
