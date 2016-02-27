@@ -1,4 +1,4 @@
-# [~/.zshrc](https://github.com/iandmyhand/settings/blob/master/.zshrc)
+# ~/.bashrc
 
 ### Appendix
   - bashrc system default setting
