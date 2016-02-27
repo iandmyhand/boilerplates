@@ -1,3 +1,5 @@
+# Applications
+
 #### [iTerm2](https://www.iterm2.com)
 - [sssum.itermcolors](https://github.com/iandmyhand/settings/blob/master/MacOSX/sssum.itermcolors)
 - Alfred Support
@@ -39,3 +41,9 @@ chsh -s /usr/local/bin/zsh
 - settings
     - [~/.zshrc](https://github.com/iandmyhand/settings/blob/master/MacOSX/.zshrc)
     - [~/.oh-my-zsh/themes/sssum.zsh-theme](https://github.com/iandmyhand/settings/blob/master/MacOSX/sssum.zsh-theme)
+
+
+# Mac OS X Settings
+
+- [Max OS X Key bindings](https://github.com/iandmyhand/settings/blob/master/MacOSX/MacOSXKeyBinding.md)
+    - Home, End, Page Up, Page Down Key를 윈도우처럼 사용하고 싶을 때 적용한다. HHKB2를 이용하고 있다면 매우 유용하다.
