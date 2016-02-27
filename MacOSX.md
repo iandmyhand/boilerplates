@@ -29,3 +29,4 @@
     
     - settings
         - [~/.zshrc](https://github.com/iandmyhand/settings/blob/master/MacOSX/.zshrc)
+        - [~/.oh-my-zsh/themes/sssum.zsh-theme](https://github.com/iandmyhand/settings/blob/master/MacOSX/sssum.zsh-theme)
