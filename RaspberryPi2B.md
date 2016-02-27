@@ -316,10 +316,10 @@
     $ sudo adduser --group samba
     Adding group `samba' (GID 1002) ...
     Done.
-    $ sudo adduser --home /home/samba --gid 1002 samba
-    Adding user `samba' ...
-    Adding new user `samba' (1001) with group `samba' ...
-    Creating home directory `/home/samba' ...
+    $ sudo adduser --home /home/test --gid 1002 test
+    Adding user `test' ...
+    Adding new user `test' (1001) with group `samba' ...
+    Creating home directory `/home/test' ...
     Copying files from `/etc/skel' ...
     Enter new UNIX password:
     Retype new UNIX password:
@@ -332,26 +332,30 @@
       Home Phone []: <아무거나 입력>
       Other []: <아무거나 입력>
     Is the information correct? [Y/n] Y
-    $ sudo mkdir /home/samba/gluster
-    $ sudo mount.glusterfs <HOST NAME>:/glusv0 /home/samba/gluster
+    $ sudo mkdir /home/test/gluster
+    $ mkdir $HOME/gluster/test
+    $ sudo chown test:samba $HOME/gluster/test
+    $ sudo mount.glusterfs <HOST NAME>:/glusv0 /home/test/gluster
     $ sudo mount
-    $ sudo chown samba:samba /home/samba/gluster/
     ```
     - samba 계정 추가(방금 추가한 linux 계정명으로 입력한다.)
     ```
-    $ sudo smbpasswd -a samba
+    $ sudo smbpasswd -a test
     New SMB password:
     Retype new SMB password:
-    Added user samba.
+    Added user test.
     ```
     - samba 환경 설정 (smb.conf 가장 하단에 추가)
     ```
     $ sudo vi /etc/samba/smb.conf
-    [samba]
+    [test]
     comment = Raspberry Pi Samba Server
-    path = /home/samba/gluster
+    path = /home/test/gluster/test
     writable = yes
     browseable = yes
+    valid users = chochocho
+    create mask = 0775
+    directory mask = 0775
     ```
       - path가 로그인 시 home 폴더로 보임
     - 환경 설정 정상적으로 적용되었는지 확인
@@ -361,10 +365,20 @@
     Processing section "[homes]"
     Processing section "[printers]"
     Processing section "[print$]"
-    Processing section "[samba]"
+    Processing section "[test]"
     Loaded services file OK.
     Server role: ROLE_STANDALONE
     Press enter to see a dump of your service definitions
+    ```
+    - 계정 활성화
+    ```
+    $ sudo smbpasswd -e test
+    Enabled user test.
+    ```
+    - 계정 리스트
+    ```
+    sudo pdbedit -L
+    test:4294967295:Samba
     ```
     - 실행
     ```
@@ -373,13 +387,13 @@
     ```
     - Test
     ```
-    $ smbclient -L localhost -U samba
-    Enter samba's password:
+    $ smbclient -L localhost -U test
+    Enter test's password:
     Domain=[WORKGROUP] OS=[Unix] Server=[Samba 4.1.17-Debian]
 
       Sharename       Type      Comment
       ---------       ----      -------
-      samba           Disk      Raspberry Pi Samba Server
+      test            Disk      Raspberry Pi Samba Server
       print$          Disk      Printer Drivers
       IPC$            IPC       IPC Service (Samba 4.1.17-Debian)
     Domain=[WORKGROUP] OS=[Unix] Server=[Samba 4.1.17-Debian]
