@@ -27,3 +27,5 @@
         $ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
         ```
     
+    - settings
+        - [~/.zshrc](https://github.com/iandmyhand/settings/blob/master/MacOSX/.zshrc)
