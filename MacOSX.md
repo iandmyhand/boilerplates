@@ -1,4 +1,4 @@
-#### [iTerm3](https://www.iterm2.com/version3.html)
+#### [iTerm2](https://www.iterm2.com)
 - [sssum.itermcolors](https://github.com/iandmyhand/settings/blob/master/MacOSX/sssum.itermcolors)
 - Alfred Support
     - Go to Alfred Preferences and choose Features. Pick Terminal/Shell and for Application choose Custom. Then paste the [iTerm2 3.0 Alfred Script](https://github.com/iandmyhand/settings/blob/master/MacOSX/iTerm2-3.0AlfredScript.txt)
