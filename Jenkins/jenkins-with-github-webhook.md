@@ -1,4 +1,6 @@
 # Jenkins with Github webhook (auto deployment)
+
+## Set ssh key up for deployment on Jenkins with Github.
 - Connect to Server(root account or an account authorized as root).
 
     ```
@@ -47,4 +49,7 @@
     Are you sure you want to continue connecting (yes/no)? [Type yes]
     ```
 
+## References
+- [Installing Jenkins on Ubuntu](https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu)
+- [Generating an ssh key](https://help.github.com/articles/generating-an-ssh-key/)
 
