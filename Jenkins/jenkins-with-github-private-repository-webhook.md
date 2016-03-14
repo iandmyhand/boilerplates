@@ -118,9 +118,7 @@
     - Fill in with ```ssh-agent bash -c 'ssh-add /var/lib/jenkins/.ssh/deploy_key_for_myproject; git -C "/path/to/myproject" pull >> /var/log/jenkins/jenkins.log'```
 
 
-# Set Jenkins up behind Nginx with SSL.
-
-## Set Nginx up for reverse proxy with SSL.
+## Set Jenkins up behind Nginx with SSL.
 - Nginx conf file. (recommended location: /etc/nginx/sites-available/jenkins.conf and link it to /etc/nginx/sites-enabled/jenkins.conf)
 
     ```
@@ -196,7 +194,7 @@
     ```
 
 
-# Misc.
+## Misc.
 - Configure for ssh.
     
     ```
@@ -211,7 +209,8 @@
         IdentitiesOnly yes
     ```
 
-# References
+
+## References
 - [Installing Jenkins on Ubuntu](https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu)
 - [Generating an ssh key](https://help.github.com/articles/generating-an-ssh-key/)
 - [What IP addresses does GitHub use that I should whitelist?](https://help.github.com/articles/what-ip-addresses-does-github-use-that-i-should-whitelist/)
