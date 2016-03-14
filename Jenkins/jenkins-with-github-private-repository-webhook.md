@@ -1,11 +1,33 @@
 # Jenkins with Github private repository webhook (auto deployment)
 
-## Set ssh key up for deployment on Jenkins with Github.
+## Installing Jenkins on Ubuntu
 - Connect to Server(root account or an account authorized as root).
 
     ```
     $ ssh myaccount@myhost
     ```
+
+- Installation
+    ```
+    wget -q -O - https://jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
+    sudo sh -c 'echo deb http://pkg.jenkins-ci.org/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
+    sudo apt-get update
+    sudo apt-get install jenkins
+    ```
+
+- Start up Jenkins
+
+    ```
+    sudo service jenkins start
+    ```
+
+- Connect to Jenkins on Browser.
+    + [ci.mydomain.com:8080](http://ci.mydomain.com:8080)
+
+- Download and innstall github plugin.
+    + Manage Jenkins -> Manage Plugins -> Available -> GitHub plugin
+
+## Set ssh key up for deployment on Jenkins with Github.
 
 - Create ssh key.
     
@@ -17,7 +39,7 @@
     Enter same passphrase again: [Type enter]
     ```
 
-    + Each project needs different deploy keys. If you want to deploy two or more projects, you have to create ssh keys for eash projects.
+    + Each project needs different deploy keys. If you want to deploy two or more projects, you have to create ssh keys for each projects.
 
 - Add ssh configuration.
     ```
@@ -42,7 +64,7 @@
     ```
 
 - Add Webhook URL to your github project setting > Webhooks & services > Add Webhook
-    + Fill in eash fields with your infomation.
+    + Fill in each fields with your infomation.
         * Fill in Payload URL with ```http://ci.mydomain.com:8080/github-webhook/```
         * Content type: application/json
         * Empty Secret field.
@@ -99,11 +121,11 @@
 # Set Jenkins up behind Nginx with SSL.
 
 ## Set Nginx up for reverse proxy with SSL.
-- Nginx conf file. (recommended location: /etc/nginx/sites-enabled/jenkins.conf)
+- Nginx conf file. (recommended location: /etc/nginx/sites-available/jenkins.conf and link it to /etc/nginx/sites-enabled/jenkins.conf)
 
     ```
     upstream jenkins {
-        server localhost:18443 fail_timeout=0;
+        server localhost:8080 fail_timeout=0;
     }
 
     server {
@@ -165,7 +187,7 @@
     RUN_STANDALONE=true
     JENKINS_LOG=/var/log/$NAME/$NAME.log
     MAXOPENFILES=8192
-    HTTP_PORT=18888
+    HTTP_PORT=8080
     HTTPS_PORT=-1
     AJP_PORT=-1
     PREFIX=/$NAME
