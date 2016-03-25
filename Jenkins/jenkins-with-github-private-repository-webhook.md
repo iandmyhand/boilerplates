@@ -24,7 +24,7 @@
 - Connect to Jenkins on Browser.
     + [ci.mydomain.com:8080](http://ci.mydomain.com:8080)
 
-- Download and innstall github plugin.
+- Download and install github plugin.
     + Manage Jenkins -> Manage Plugins -> Available -> GitHub plugin
 
 ## Set ssh key up for deployment on Jenkins with Github.
