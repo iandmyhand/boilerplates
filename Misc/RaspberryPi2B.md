@@ -303,7 +303,7 @@
         ```
 
 #### GlusterFS Stand Alone Mode
-    - Gluster volume을 생성한다.
+- Gluster volume을 생성한다.
     
     ```
     $ sudo gluster volume create glusv0 transport tcp rasp01:/mnt/exdrive/brick
@@ -328,6 +328,13 @@
     $ sudo mount
     $ sudo chmod 777 $HOME/gluster/
     ```
+
+        - 만약 이미 사용하던 volume이라면 아래와 같이 설정을 초기화해준다.
+
+        ```
+        sudo setfattr -x trusted.glusterfs.volume-id /mnt/mybook1/brick
+        sudo setfattr -x trusted.gfid /mnt/mybook1/brick
+        ```
     
     - Test
     
@@ -366,9 +373,7 @@
         - 신규유저 추가하기 전에 skel을 설정해두었던 스크립트로 변경해주기
         
         ```
-        $ sudo cp $HOME/.bashrc /etc/skel/
-        $ sudo cp $HOME/.vimrc /etc/skel/
-        $ sudo cp $HOME/.inputrc /etc/skel/
+        $ sudo cp $HOME/.bash_aliases $HOME/.vimrc $HOME/.inputrc /etc/skel/
         ```
         
         - 삼바용 Linux 계정 추가
