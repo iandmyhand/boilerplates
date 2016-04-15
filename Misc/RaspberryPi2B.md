@@ -329,7 +329,7 @@
     $ sudo chmod 777 $HOME/gluster/
     ```
 
-        - 만약 이미 사용하던 volume이라면 아래와 같이 설정을 초기화해준다.
+    - 만약 이미 사용하던 volume이라면 아래와 같이 설정을 초기화해준 뒤 create을 한다.
 
         ```
         sudo setfattr -x trusted.glusterfs.volume-id /mnt/mybook1/brick
@@ -338,21 +338,27 @@
     
     - Test
     
-    ```
-    $ touch $HOME/gluster/test.txt
-    $ echo "TEST" >> $HOME/gluster/test.txt
-    $ ls /mnt/exdrive/brick
-    total 4.0K
-    drwxr-xr-x 3 pi   38 Jan 28 16:18 ./
-    drwxrwxrwx 3 root 18 Jan 28 09:41 ../
-    drw------- 7 root 70 Jan 28 16:18 .glusterfs/
-    -rw-r--r-- 2 pi    5 Jan 28 16:19 test.txt
-    $ cat /mnt/exdrive/brick/test.txt
-    TEST
-    $ sudo reboot
-    $ cat $HOME/gluster/test.txt
-    TEST
-    ```
+        ```
+        $ touch $HOME/gluster/test.txt
+        $ echo "TEST" >> $HOME/gluster/test.txt
+        $ ls /mnt/exdrive/brick
+        total 4.0K
+        drwxr-xr-x 3 pi   38 Jan 28 16:18 ./
+        drwxrwxrwx 3 root 18 Jan 28 09:41 ../
+        drw------- 7 root 70 Jan 28 16:18 .glusterfs/
+        -rw-r--r-- 2 pi    5 Jan 28 16:19 test.txt
+        $ cat /mnt/exdrive/brick/test.txt
+        TEST
+        $ sudo reboot
+        $ cat $HOME/gluster/test.txt
+        TEST
+        ```
+
+    - 현재 volume list 보기
+    
+        ```
+        $ sudo gluster volume info all
+        ```
 
 #### References
     - [xfs 포맷하기](https://linhost.info/2012/08/format-a-volume-as-xfs-in-debian-and-ubuntu/)
