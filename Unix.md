@@ -1,19 +1,40 @@
 # [~/.bashrc](https://github.com/iandmyhand/settings/blob/master/UNIX/.bashrc)
 
 ### Appendix
-  - bashrc system default setting
-    ```$ sudo vi /etc/bash.bashrc```
+    - bashrc system default setting
+        
+        ```
+        $ sudo vi /etc/bash.bashrc
+        ```
 
 
 # [~/.vimrc](https://github.com/iandmyhand/settings/blob/master/UNIX/.vimrc)
   
 ### Appendix
-  - vimrc system default setting
-    ```$ sudo vi /etc/vim/vimrc.local```
+- vimrc system default setting
+       
+   ```
+   $ sudo vi /etc/vim/vimrc.local
+   ```
+
+- Set tail text colours up.
+
+    ```
+    #!/bin/zsh
+    coloredoutput() {
+      tail -f $1 |
+      sed -e 's/\(.*\[INFO.*\)/\o033[34m\1\o033[39m/' \
+          -e 's/\(.*\[WARN.*\)/\o033[33m\1\o033[39m/' \
+          -e 's/\(.*\[ERROR.*\)/\o033[31m\1\o033[39m/'
+    }
+    alias tailf=coloredoutput
+    ```
 
 
 # [~/.inputrc](https://github.com/iandmyhand/settings/blob/master/UNIX/.inputrc)
-  - for Korean Language
+    - for Korean Language
+
+
   
 
 # ANSI Color Setting
