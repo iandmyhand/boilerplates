@@ -1,5 +1,7 @@
 # Applications
 
+#### [Firefox](https://www.mozilla.org)
+
 #### [iTerm2](https://www.iterm2.com)
 - [sssum.itermcolors](https://github.com/iandmyhand/settings/blob/master/MacOSX/sssum.itermcolors)
 - Alfred Support
@@ -7,6 +9,9 @@
 
 #### [Mounty](http://www.enjoygineering.com/mounty/)
 - NTFS read/write-mode app.
+
+#### [OWASP ZAP](https://github.com/zaproxy/zaproxy)
+- 
 
 #### [Sublime Text 3](http://www.sublimetext.com/3)
 - Packages
