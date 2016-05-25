@@ -90,8 +90,10 @@
             $ vi ~/.bash_profile
             ...
             if [ -z "$SSH_AUTH_SOCK" ] ; then
+              echo '\nRunning ssh-agent and add keys.'
               eval `ssh-agent -s`
               ssh-add '/path/to/ssh_key'
+              echo ''
             fi
             ...
             ```
