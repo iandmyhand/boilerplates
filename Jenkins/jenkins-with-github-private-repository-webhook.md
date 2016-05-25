@@ -87,7 +87,7 @@
         - Run ssh-agent automatically after OS booted.
 
             ```
-            $ vi /etc/rc.local
+            $ vi ~/.bash_profile
             ...
             if [ -z "$SSH_AUTH_SOCK" ] ; then
               eval `ssh-agent -s`
