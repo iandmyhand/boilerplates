@@ -79,10 +79,36 @@
         - Add ssh configuration.
     
             ```
-            $ vi config
+            $ vi ~/.ssh/config
             Host github.com
               ForwardAgent yes
             ```
+            
+            - If you want to use multiple accounts or keys, set host as alias you want. And set git remote url to that.
+            
+                ```
+                $ vi ~/.ssh/config
+                Host a.github.com
+                  HostName github.com
+                  PreferredAuthentications publickey
+                  IdentityFile /path/to/.ssh/deploy_key_a
+                
+                Host b.github.com
+                  HostName github.com
+                  PreferredAuthenticatoins publickey
+                  IdentityFile /path/to/.ssh/deploy_key_b
+                ```
+                
+                ```
+                $ cd /path/to/project_a
+                $ ssh -T git@a.github.com
+                Hi username! You've successfully authenticated, but GitHub does not provide shell access.
+                $ git remote set-url origin git@a.github.com:username/project-a.git
+                $ cd /path/to/project_b
+                $ ssh -T git@b.github.com
+                Hi username! You've successfully authenticated, but GitHub does not provide shell access.
+                $ git remote set-url origin git@a.github.com:username/project-b.git
+                ```
 
         - Run ssh-agent automatically after OS booted.
 
