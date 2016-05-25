@@ -41,14 +41,6 @@
 
     + Each project needs different deploy keys. If you want to deploy two or more projects, you have to create ssh keys for each projects.
 
-- Add ssh configuration.
-    ```
-    $ vi config
-    ...
-    ForwardAgent yes
-    ...
-    ```
-
 - Copy ssh configuration and key for Jenkins
 
     ```
@@ -81,6 +73,28 @@
     RSA key fingerprint is ...
     Are you sure you want to continue connecting (yes/no)? [Type yes]
     ```
+
+    - Or you can run ssh-agent automatically and connect to github.com through it.
+    
+        - Add ssh configuration.
+    
+            ```
+            $ vi config
+            Host github.com
+              ForwardAgent yes
+            ```
+
+        - Run ssh-agent automatically after OS booted.
+
+            ```
+            $ vi /etc/rc.local
+            ...
+            if [ -z "$SSH_AUTH_SOCK" ] ; then
+              eval `ssh-agent -s`
+              ssh-add
+            fi
+            ...
+            ```
 
 - Clone project to deployment target location.
     
@@ -217,11 +231,5 @@
 - [Jenkins behind an NGinX reverse proxy](https://wiki.jenkins-ci.org/display/JENKINS/Jenkins+behind+an+NGinX+reverse+proxy)
 - [Trying to run Jenkins behind SSL reverse proxy](http://serverfault.com/questions/743110/trying-to-run-jenkins-behind-ssl-reverse-proxy-404-http-localhost-jenkins-ma)
 - [About GitHub Authentication Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Github+OAuth+Plugin)
-- Run ssh-agent automatically
+- [Using ssh-agent forwarding](https://developer.github.com/guides/using-ssh-agent-forwarding/)
 
-    ```
-    if [ -z "$SSH_AUTH_SOCK" ] ; then
-      eval `ssh-agent -s`
-      ssh-add
-    fi
-    ```
