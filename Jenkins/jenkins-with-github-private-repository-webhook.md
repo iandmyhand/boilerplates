@@ -110,7 +110,7 @@
                 $ git remote set-url origin git@a.github.com:username/project-b.git
                 ```
 
-        - Run ssh-agent automatically after OS booted.
+        - Run ssh-agent automatically when you logged in.
 
             ```
             $ vi ~/.bash_profile
