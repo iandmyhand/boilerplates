@@ -217,4 +217,11 @@
 - [Jenkins behind an NGinX reverse proxy](https://wiki.jenkins-ci.org/display/JENKINS/Jenkins+behind+an+NGinX+reverse+proxy)
 - [Trying to run Jenkins behind SSL reverse proxy](http://serverfault.com/questions/743110/trying-to-run-jenkins-behind-ssl-reverse-proxy-404-http-localhost-jenkins-ma)
 - [About GitHub Authentication Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Github+OAuth+Plugin)
+- Run ssh-agent automatically
 
+    ```
+    if [ -z "$SSH_AUTH_SOCK" ] ; then
+      eval `ssh-agent -s`
+      ssh-add
+    fi
+    ```
