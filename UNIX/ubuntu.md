@@ -1,5 +1,11 @@
 # Setup Ubuntu from scratch
 
+## Setup timezone
+
+    ```
+    $ sudo timedatectl set-timezone Asia/Seoul
+    ```
+
 ## Update & upgrade apt-get
 
     ```
@@ -14,9 +20,9 @@
 
 ## Set up ssh to start when after boot.
 
-  ```
-	sudo update-rc.d ssh defaults
-	```
+    ```
+    sudo update-rc.d ssh defaults
+    ```
 
 ## Set up zsh
 - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
@@ -53,10 +59,11 @@
 
     ```set clipboard=unnamedplus```
 
- - need to be enabled ```+clipboard``` for vim (To make clipboard enable, install vim-gtk)
-    ```
-    $ vim --version
-    ...
-    +clipboard
-    ...
-    ```
+    - need to be enabled ```+clipboard``` for vim (To make clipboard enable, install vim-gtk)
+ 
+        ```
+        $ vim --version
+        ...
+        +clipboard
+        ...
+        ```
