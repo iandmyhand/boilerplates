@@ -15,6 +15,7 @@ set paste
 set nu
 set ai
 set mouse=c
+set clipboard=unnamedplus
 
 map <F2> :set mouse=a<CR>
 map <F3> :set mouse=c<CR>
