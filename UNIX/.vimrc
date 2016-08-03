@@ -14,3 +14,7 @@ set background=dark
 set paste
 set nu
 set ai
+set mouse=c
+
+map <F2> :set mouse=a<CR>
+map <F3> :set mouse=c<CR>
