@@ -250,6 +250,16 @@
         IdentityFile   /path/myhome/.ssh/myproject_deploy_key
         IdentitiesOnly yes
     ```
+    
+- Fix java.security.InvalidAlgorithmParameterException
+    - If some test connection to other server failed, try below solution.
+
+    ```
+    $ sudo update-ca-certificates -f
+    $ sudo /var/lib/dpkg/info/ca-certificates-java.postinst configure
+    ```
+    
+    - Refer to [Error - trustAnchors parameter must be non-empty](http://stackoverflow.com/questions/6784463/error-trustanchors-parameter-must-be-non-empty/25188331#25188331)
 
 
 ## References
