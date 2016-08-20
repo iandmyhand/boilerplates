@@ -17,4 +17,5 @@
     4b0c6c68c4d2  nginx  "nginx -g 'daemon off"   18 seconds ago      Up 13 seconds       443/tcp, 0.0.0.0:8000->80/tcp   cranky_raman
     ```
 
-    - Connect to [http://192.168.99.100:8000/](http://192.168.99.100:8000/) on your browser.
+    - Connect to [http://<DOCKER_HOST>:8000/](http://192.168.99.100:8000/) on your browser.
+
