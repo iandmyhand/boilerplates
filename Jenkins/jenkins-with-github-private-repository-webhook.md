@@ -195,8 +195,8 @@
             proxy_set_header X-Forwarded-Port 8443;
             proxy_set_header X-Forwarded-Ssl on;
 
-            proxy_pass http://jenkins;
-            proxy_redirect off;
+            proxy_pass http://localhost:8080;
+            proxy_redirect http://localhost:8080 https://ci.mydomain.com:8443;
 
             client_max_body_size 10m;
             client_body_buffer_size 128k;
