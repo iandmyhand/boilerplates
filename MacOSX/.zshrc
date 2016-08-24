@@ -9,6 +9,8 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias ll='ls -alvhGF'
+alias gffs='git flow feature start'
+alias gfff='git flow feature finish'
 
 coloredoutput() {
   tail -f $1 |
