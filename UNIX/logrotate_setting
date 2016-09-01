@@ -1,0 +1,11 @@
+# logrotate setting (/etc/logrotate.d/logrotate_custom_setting)
+"/path/to/first/*.log" "/path/to/second/*.log" {
+    copytruncate
+    daily
+    rotate 90
+    missingok
+    dateext
+    dateformat -%Y%m%d
+    notifempty
+    create 0664 USER GROUP
+}
