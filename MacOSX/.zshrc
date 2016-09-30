@@ -11,6 +11,9 @@ alias mv='mv -i'
 alias ll='ls -alvhGF'
 alias gffs='git flow feature start'
 alias gfff='git flow feature finish'
+alias gfrs='git flow feature start'
+alias gfrp='git flow feature publish'
+alias gfrf='git flow feature finish'
 
 coloredoutput() {
   tail -f $1 |
