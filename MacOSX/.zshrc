@@ -16,6 +16,7 @@ alias gfrp='git flow release publish'
 alias gfrf='git flow release finish'
 alias gfrff='git push && git push --tags && git checkout master && git push && git checkout develop'
 alias gfhs='git flow hotfix start'
+alias gfhs='git flow hotfix publish'
 alias gfhf='git flow hotfix finish'
 
 coloredoutput() {
