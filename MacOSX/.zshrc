@@ -10,10 +10,13 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias ll='ls -alvhGF'
 alias gffs='git flow feature start'
-alias gfff='git flow feature finish'
-alias gfrs='git flow feature start'
-alias gfrp='git flow feature publish'
-alias gfrf='git flow feature finish'
+120 alias gfff='git flow feature finish'
+alias gfrs='git flow release start'
+alias gfrp='git flow release publish'
+alias gfrf='git flow release finish'
+alias gfrff='git push && git push --tags && git checkout master && git push && git checkout develop'
+alias gfhs='git flow hotfix start'
+alias gfhf='git flow hotfix finish'
 
 coloredoutput() {
   tail -f $1 |
