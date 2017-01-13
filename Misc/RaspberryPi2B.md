@@ -581,3 +581,12 @@
            }
   }
   ```
+
+#### After reboot
+```
+sudo mount.glusterfs seomgi-zbox:/glusv0 /home/seomgi/gluster
+sudo mount.glusterfs seomgi-zbox:/glusv0 /home/chochocho/gluster
+sudo mount
+sudo smbd start
+sudo nmbd start
+```
