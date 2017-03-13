@@ -15,7 +15,8 @@
 ## Install favorite packages
 
     ```
-    sudo apt-get -y install vim vim-gtk ssh git git-core zsh openjdk-8-jdk xfsprogs ntfs-3g glusterfs-server samba samba-common-bin smbclient nginx npm
+    sudo apt-get -y install vim vim-gtk curl ssh git git-core zsh openjdk-8-jdk npm
+    sudo apt-get -y xfsprogs ntfs-3g glusterfs-server samba samba-common-bin smbclient nginx
     ```
 
 ## Set up ssh to start when after boot.
