@@ -19,7 +19,7 @@
     sudo apt-get -y xfsprogs ntfs-3g glusterfs-server samba samba-common-bin smbclient nginx
     ```
 
-## Set up ssh to start when after boot.
+## Set up ssh to start automatically after boot.
 
     ```
     sudo update-rc.d ssh defaults
