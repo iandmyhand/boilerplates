@@ -44,6 +44,9 @@
     /usr/bin/zsh
     $ sudo vi /etc/adduser.conf
     # change DSHELL to $SHELL
+    $ sudo cp ~/.zshrc /etc/skel/
+    $ sudo cp ~/.inputrc /etc/skel/
+    $ sudo cp ~/.vimrc /etc/skel/
     ```
 
 ## Block wifi by default
