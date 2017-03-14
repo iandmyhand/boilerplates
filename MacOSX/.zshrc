@@ -15,6 +15,7 @@ else
 fi
 ...
 eval "$(ssh-agent -s)"
+ssh-add -K ~/.ssh/id_rsa
 ...
 alias rm='rm -i'
 alias cp='cp -i'
