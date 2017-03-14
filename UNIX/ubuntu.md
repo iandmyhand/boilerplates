@@ -36,6 +36,15 @@
 - settings
     - Refer to [~/.zshrc](https://github.com/iandmyhand/settings/blob/master/MacOSX/.zshrc)
     - Copy [~/.oh-my-zsh/themes/sssum.zsh-theme](https://github.com/iandmyhand/settings/blob/master/MacOSX/sssum.zsh-theme)
+    
+## Set up skel
+
+    ```
+    $ echo $SHELL
+    /usr/bin/zsh
+    $ sudo vi /etc/adduser.conf
+    # change DSHELL to $SHELL
+    ```
 
 ## Block wifi by default
 
