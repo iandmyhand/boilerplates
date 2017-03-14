@@ -29,8 +29,9 @@
    
    ```
    $ sudo vi /etc/update-motd.d/50-ip-address
-   #!/bin/bash
-   ifconfig | grep "inet addr"
+   #!/bin/sh
+   IP=$(ifconfig | grep "inet addr")
+   printf "\nIP of this machine: \n%s\n" "$IP"
    ```
 
 ## Set up zsh
