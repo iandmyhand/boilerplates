@@ -7,6 +7,13 @@ ZSH_THEME="sssum"
 export LC_ALL=en_US.UTF-8
 export LANG=ko_KR.UTF-8
 ...
+# Uncomment below lines.
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='mvim'
+fi
+...
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
