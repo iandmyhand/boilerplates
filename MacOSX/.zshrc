@@ -1,10 +1,12 @@
 # Add below script to .zshrc
-
+...
+export ZSH="$HOME/.oh-my-zsh"
+...
 ZSH_THEME="sssum"
-
+...
 export LC_ALL=en_US.UTF-8
 export LANG=ko_KR.UTF-8
-
+...
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
