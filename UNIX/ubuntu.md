@@ -15,7 +15,7 @@
 ## Install favorite packages
 
     ```
-    sudo apt-get -y install vim vim-gtk curl ssh git git-core zsh openjdk-8-jdk npm python3
+    sudo apt-get -y install vim vim-gtk curl ssh git git-core zsh openjdk-8-jdk npm python3 figlet lolcat
     sudo apt-get -y xfsprogs ntfs-3g glusterfs-server samba samba-common-bin smbclient nginx
     ```
 
@@ -24,6 +24,14 @@
     ```
     sudo update-rc.d ssh defaults
     ```
+
+## Set up login message.
+   
+   ```
+   $ sudo vi /etc/update-motd.d/50-ip-address
+   #!/bin/bash
+   ifconfig | grep "inet addr"
+   ```
 
 ## Set up zsh
 - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
