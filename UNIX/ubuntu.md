@@ -46,6 +46,7 @@
     $ sudo cp ~/.zshrc /etc/skel/
     $ sudo cp ~/.inputrc /etc/skel/
     $ sudo cp ~/.vimrc /etc/skel/
+    $ sudo cp -R ~/.oh-my-zsh /etc/skel/
     ```
 
 ## Block wifi by default
