@@ -35,3 +35,5 @@ coloredoutput() {
       -e 's/\(\[ERROR.*\)/\o033[31m\1\o033[39m/'
 }
 alias tailf=coloredoutput
+
+figlet Welcome! | lolcat
