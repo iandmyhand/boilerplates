@@ -16,6 +16,7 @@ set nu
 set ai
 set mouse=c
 set clipboard=unnamedplus
+set hlsearch
 
 map <F2> :set mouse=a<CR>
 map <F3> :set mouse=c<CR>

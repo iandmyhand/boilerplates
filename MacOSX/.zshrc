@@ -1,10 +1,22 @@
 # Add below script to .zshrc
-
+...
+export ZSH="$HOME/.oh-my-zsh"
+...
 ZSH_THEME="sssum"
-
+...
 export LC_ALL=en_US.UTF-8
 export LANG=ko_KR.UTF-8
-
+...
+# Uncomment below lines.
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='mvim'
+fi
+...
+eval "$(ssh-agent -s)"
+ssh-add -k ~/.ssh/id_rsa
+...
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
@@ -26,3 +38,5 @@ coloredoutput() {
       -e 's/\(\[ERROR.*\)/\o033[31m\1\o033[39m/'
 }
 alias tailf=coloredoutput
+
+figlet Welcome! | lolcat
