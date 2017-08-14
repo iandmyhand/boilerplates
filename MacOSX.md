@@ -2,6 +2,10 @@
 
 #### [Firefox](https://www.mozilla.org)
 
+#### Git
+- ```brew install git```
+- git-flow: ```brew install git-flow-avh```
+
 #### [iTerm2](https://www.iterm2.com)
 - [sssum.itermcolors](https://github.com/iandmyhand/settings/blob/master/MacOSX/sssum.itermcolors)
 - Alfred Support
