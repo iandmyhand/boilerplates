@@ -14,8 +14,12 @@ else
   export EDITOR='mvim'
 fi
 ...
-eval "$(ssh-agent -s)"
-ssh-add -k ~/.ssh/id_rsa
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+  echo '\nRun ssh-agent and add keys...'
+  eval "$(ssh-agent -s)"
+  ssh-add -k ~/.ssh/id_rsa
+  echo ''
+fi
 ...
 alias rm='rm -i'
 alias cp='cp -i'
