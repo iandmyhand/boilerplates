@@ -31,7 +31,6 @@
   
 ```
 $ brew install zsh
-$ brew install zsh
 /bin/bash
 /bin/csh
 /bin/sh
@@ -51,6 +50,14 @@ chsh -s /usr/local/bin/zsh
     - [~/.zshrc](https://github.com/iandmyhand/settings/blob/master/MacOSX/.zshrc)
     - [~/.oh-my-zsh/themes/sssum.zsh-theme](https://github.com/iandmyhand/settings/blob/master/MacOSX/sssum.zsh-theme)
 
+#### [direnv](https://direnv.net/)
+
+```
+$ brew install direnv
+```
+
+Add the following line at the end of the ~/.zshrc file:
+`eval "$(direnv hook zsh)"`
 
 # Mac OS X Settings
 
