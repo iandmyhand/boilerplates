@@ -44,3 +44,6 @@ coloredoutput() {
 alias tailf=coloredoutput
 
 figlet Welcome! | lolcat
+
+# https://direnv.net/
+eval "$(direnv hook zsh)"
