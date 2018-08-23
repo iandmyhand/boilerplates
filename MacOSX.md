@@ -14,6 +14,9 @@
 #### [Mounty](http://www.enjoygineering.com/mounty/)
 - NTFS read/write-mode app.
 
+#### [Notion](https://www.notion.so/)
+- All-in-one workspace: Notes, Docs, Knowledge Base, Tasks, Projects, Spreadsheets, Databases
+
 #### [OWASP ZAP](https://github.com/zaproxy/zaproxy)
 - 
 
