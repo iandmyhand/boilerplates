@@ -1,5 +1,8 @@
 # Applications
 
+#### [Draw.io](https://www.draw.io/)
+- Desktop version: https://about.draw.io/integrations/#integrations_offline
+
 #### [Firefox](https://www.mozilla.org)
 
 #### Git
@@ -11,14 +14,8 @@
 - Alfred Support
     - Go to Alfred Preferences and choose Features. Pick Terminal/Shell and for Application choose Custom. Then paste the [iTerm2 3.0 Alfred Script](https://github.com/iandmyhand/settings/blob/master/MacOSX/iTerm2-3.0AlfredScript.txt)
 
-#### [Mounty](http://www.enjoygineering.com/mounty/)
-- NTFS read/write-mode app.
-
 #### [Notion](https://www.notion.so/)
 - All-in-one workspace: Notes, Docs, Knowledge Base, Tasks, Projects, Spreadsheets, Databases
-
-#### [OWASP ZAP](https://github.com/zaproxy/zaproxy)
-- 
 
 #### [Sublime Text 3](http://www.sublimetext.com/3)
 - Packages
