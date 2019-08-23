@@ -45,6 +45,15 @@
     - Refer to [~/.zshrc](https://github.com/iandmyhand/settings/blob/master/MacOSX/.zshrc)
     - Copy [~/.oh-my-zsh/themes/sssum.zsh-theme](https://github.com/iandmyhand/settings/blob/master/MacOSX/sssum.zsh-theme)
     
+### Use IP for Ubuntu terminal prompt on EC2
+
+     ```
+    $ vi ~/.oh-my-zsh/themes/sssum.zsh-theme
+    PRIVATE_IP="$(curl http://169.254.169.254/latest/meta-data/local-ipv4 2>/dev/null)"
+    IP_LAST_HALF="$(echo $PRIVATE_IP | cut -d'.' -f 3,4)"
+    PROMPT='$IP_LAST_HALF$INDICATOR_COLOR» $BLUE%2d$(git_prompt_info)$(git_prompt_status)$RESET '
+    ```
+    
 ## Set up skel
 
     ```
