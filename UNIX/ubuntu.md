@@ -17,6 +17,7 @@
     ```
     sudo apt-get -y install vim vim-gtk curl ssh git git-core zsh openjdk-8-jdk npm python3 python3-pip figlet lolcat
     sudo apt-get -y xfsprogs ntfs-3g glusterfs-server samba samba-common-bin smbclient nginx
+    sudo apt-get -y figlet lolcat
     ```
 
 ## Set up ssh to start automatically after boot.
@@ -52,6 +53,15 @@
     PRIVATE_IP="$(curl http://169.254.169.254/latest/meta-data/local-ipv4 2>/dev/null)"
     IP_LAST_HALF="$(echo $PRIVATE_IP | cut -d'.' -f 3,4)"
     PROMPT='$IP_LAST_HALF$INDICATOR_COLOR» $BLUE%2d$(git_prompt_info)$(git_prompt_status)$RESET '
+    ```
+
+### Use IP as Ubuntu ssh welcome message on EC2
+
+    ```
+    $ vi ~/.zshrc
+    PRIVATE_IP="$(curl http://169.254.169.254/latest/meta-data/local-ipv4 2>/dev/null)"
+    IP_LAST_HALF="$(echo $PRIVATE_IP | cut -d'.' -f 3,4)"
+    figlet "WELCOME TO $IP_LAST_HALF" | lolcat
     ```
     
 ## Set up skel
