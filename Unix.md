@@ -1,11 +1,7 @@
-# [~/.bashrc](https://github.com/iandmyhand/boilerplates/blob/master/UNIX/.bashrc)
+# [~/.bash_aliases](https://github.com/iandmyhand/boilerplates/blob/master/UNIX/.bash_aliases)
 
 ### Appendix
-    - bashrc system default setting
-        
-        ```
-        $ sudo vi /etc/bash.bashrc
-        ```
+    - bashrc system default settings location: /etc/bash.bashrc
 
 
 # [~/.vimrc](https://github.com/iandmyhand/boilerplates/blob/master/UNIX/.vimrc)
