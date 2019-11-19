@@ -70,6 +70,15 @@
     $ vi ~/.zshrc
     eval "$(direnv hook zsh)"
     ```
+
+### Brief system status when connected
+
+- Copy [sys_briefing.sh](https://github.com/iandmyhand/boilerplates/blob/master/UNIX/sys_briefing.sh) to proper location and add an executable authority to it.
+
+    ```
+    $ vi ~/.zshrc
+    ./sys_briefing.sh
+    ```
     
 ## Set up skel
 
