@@ -1,4 +1,4 @@
-# [~/.bashrc](https://github.com/iandmyhand/settings/blob/master/UNIX/.bashrc)
+# [~/.bashrc](https://github.com/iandmyhand/boilerplates/blob/master/UNIX/.bashrc)
 
 ### Appendix
     - bashrc system default setting
@@ -8,7 +8,7 @@
         ```
 
 
-# [~/.vimrc](https://github.com/iandmyhand/settings/blob/master/UNIX/.vimrc)
+# [~/.vimrc](https://github.com/iandmyhand/boilerplates/blob/master/UNIX/.vimrc)
   
 ### Appendix
 - vimrc system default setting
@@ -31,7 +31,7 @@
     ```
 
 
-# [~/.inputrc](https://github.com/iandmyhand/settings/blob/master/UNIX/.inputrc)
+# [~/.inputrc](https://github.com/iandmyhand/boilerplates/blob/master/UNIX/.inputrc)
     - for Korean Language
 
 
