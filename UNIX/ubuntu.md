@@ -76,8 +76,9 @@
 - Copy [sys_briefing.sh](https://github.com/iandmyhand/boilerplates/blob/master/UNIX/sys_briefing.sh) to proper location and add an executable authority to it.
 
     ```
+    $ chmod 764 sys_briefing.sh
     $ vi ~/.zshrc
-    ./sys_briefing.sh
+    [YOUR_PROPER_LOCATION]/sys_briefing.sh
     ```
     
 ## Set up skel
