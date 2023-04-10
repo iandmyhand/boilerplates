@@ -6,7 +6,8 @@
 1Password is the easiest way to store and use strong passwords.
 
 #### [Alfred](https://www.alfredapp.com/help/getting-started/install/)
-Alfred boosts your efficiency with hotkeys, keywords, text expansion and more. Search your Mac and the web, and be more productive with custom actions to control your Mac.
+- Alfred boosts your efficiency with hotkeys, keywords, text expansion and more. Search your Mac and the web, and be more productive with custom actions to control your Mac.
+- Naver Search Workflow: [alfnaversearch](https://github.com/Kuniz/alfnaversearch)
 
 #### [Chrome](https://www.google.com/chrome/)
 - General browser.
