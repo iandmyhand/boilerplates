@@ -1,9 +1,19 @@
 # Applications
 
+#### [1Password](https://1password.com/downloads/)
+1Password is the easiest way to store and use strong passwords.
+
+#### [Alfred](https://www.alfredapp.com/help/getting-started/install/)
+Alfred boosts your efficiency with hotkeys, keywords, text expansion and more. Search your Mac and the web, and be more productive with custom actions to control your Mac.
+
+#### [Chrome](https://www.google.com/chrome/)
+- General browser.
+
 #### [Draw.io](https://www.draw.io/)
 - Desktop version: https://about.draw.io/integrations/#integrations_offline
 
-#### [Firefox](https://www.mozilla.org)
+#### [Dropbox](https://www.dropbox.com/desktop)
+- File sharing.
 
 #### Git
 - ```brew install git```
