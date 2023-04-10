@@ -1,5 +1,7 @@
 # Applications
 
+#### [Homebrew](https://docs.brew.sh/Installation)
+
 #### [1Password](https://1password.com/downloads/)
 1Password is the easiest way to store and use strong passwords.
 
@@ -9,11 +11,11 @@ Alfred boosts your efficiency with hotkeys, keywords, text expansion and more. S
 #### [Chrome](https://www.google.com/chrome/)
 - General browser.
 
-#### [Draw.io](https://www.draw.io/)
-- Desktop version: https://about.draw.io/integrations/#integrations_offline
-
 #### [Dropbox](https://www.dropbox.com/desktop)
 - File sharing.
+
+#### [Draw.io](https://www.draw.io/)
+- Desktop version: https://about.draw.io/integrations/#integrations_offline
 
 #### Git
 - ```brew install git```
