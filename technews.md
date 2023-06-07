@@ -1,0 +1,2 @@
+- [GeekNews](https://news.hada.io/)
+- [Hacker News](https://news.ycombinator.com/)
