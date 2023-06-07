@@ -1,6 +1,25 @@
 # Applications
 
-#### [Homebrew](https://docs.brew.sh/Installation)
+## Editor/Note
+
+#### [Notion](https://www.notion.so/)
+- All-in-one workspace: Notes, Docs, Knowledge Base, Tasks, Projects, Spreadsheets, Databases
+
+#### [Sublime Text 3](http://www.sublimetext.com/3)
+- Lightweight Text Editor that supports Linux, Mac OS, and Windows.
+- Packages
+
+    ```
+    Command + Shift + P > Install Package > type below packages.
+    ```
+    
+    - [Codecs33](https://github.com/seanliang/Codecs33/tree/osx) for ConvertToUTF8.
+    - [ConvertToUTF8](https://github.com/seanliang/ConvertToUTF8) for editing CJK encoding files.
+
+#### [Visual Studio Code](https://code.visualstudio.com/)
+
+
+## for Productivity
 
 #### [1Password](https://1password.com/downloads/)
 1Password is the easiest way to store and use strong passwords.
@@ -17,41 +36,36 @@
 
 #### [Draw.io](https://www.draw.io/)
 - Desktop version: https://about.draw.io/integrations/#integrations_offline
+- Google Drive supports Draw.io through the Google Workspace Marketplace.
 
-#### Git
-- ```brew install git```
-- git-flow: ```brew install git-flow-avh```
+#### [Figma](https://www.figma.com/)
+
+#### [Microsoft To Do](https://todo.microsoft.com/)
+
+#### [Bandizip](https://kr.bandisoft.com/bandizip.mac/)
+
+
+## Messager
+
+#### [Slack](https://slack.com/)
+
+#### [KakaoTalk](https://www.kakaocorp.com/page/service/service/KakaoTalk)
+
+#### [Line](https://line.me/)
+
+#### [Telegram](https://telegram.org/)
+
+
+## for Software Development
 
 #### [iTerm2](https://www.iterm2.com)
 - [sssum.itermcolors](https://github.com/iandmyhand/settings/blob/master/MacOSX/sssum.itermcolors)
 - Alfred Support
     - Go to Alfred Preferences and choose Features. Pick Terminal/Shell and for Application choose Custom. Then paste the [iTerm2 3.0 Alfred Script](https://github.com/iandmyhand/settings/blob/master/MacOSX/iTerm2-3.0AlfredScript.txt)
 
-#### [Notion](https://www.notion.so/)
-- All-in-one workspace: Notes, Docs, Knowledge Base, Tasks, Projects, Spreadsheets, Databases
-
-#### [Sublime Text 3](http://www.sublimetext.com/3)
-- Packages
-
-    ```
-    Command + Shift + P > Install Package > type below packages.
-    ```
-    
-    - [Codecs33](https://github.com/seanliang/Codecs33/tree/osx) for ConvertToUTF8.
-    - [ConvertToUTF8](https://github.com/seanliang/ConvertToUTF8) for editing CJK encoding files.
+#### [Homebrew](https://docs.brew.sh/Installation)
 
 #### [ZSH](https://en.wikipedia.org/wiki/Z_shell)
-  
-```
-$ brew install zsh
-/bin/bash
-/bin/csh
-/bin/sh
-/bin/tcsh
-/bin/zsh
-/usr/local/bin/zsh
-chsh -s /usr/local/bin/zsh
-```
     
 - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
     
@@ -63,6 +77,22 @@ chsh -s /usr/local/bin/zsh
     - [~/.zshrc](https://github.com/iandmyhand/settings/blob/master/MacOSX/.zshrc)
     - [~/.oh-my-zsh/themes/sssum.zsh-theme](https://github.com/iandmyhand/settings/blob/master/MacOSX/sssum.zsh-theme)
 
+#### Git
+- ```brew install git```
+- git-flow: ```brew install git-flow-avh```
+
+#### [python3](https://www.python.org/)
+
+```
+brew install python3
+```
+
+#### [node.js](https://nodejs.org/)
+
+```
+brew install node
+```
+
 #### [direnv](https://direnv.net/)
 
 ```
@@ -71,6 +101,7 @@ $ brew install direnv
 
 Add the following line at the end of the ~/.zshrc file:
 `eval "$(direnv hook zsh)"`
+
 
 # Mac OS X Settings
 
