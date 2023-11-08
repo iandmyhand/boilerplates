@@ -26,8 +26,9 @@
 1Password is the easiest way to store and use strong passwords.
 
 #### [Alfred](https://www.alfredapp.com/help/getting-started/install/)
-- Alfred boosts your efficiency with hotkeys, keywords, text expansion and more. Search your Mac and the web, and be more productive with custom actions to control your Mac.
-- Naver Search Workflow: [alfnaversearch](https://github.com/Kuniz/alfnaversearch)
+- Alfred boosts your efficiency with hotkeys, keywords, text expansion, and more. Search your Mac and the web, and be more productive with custom actions to control your Mac.
+- **For Koreans Only**
+    - Naver Search Workflow: [alfnaversearch](https://github.com/Kuniz/alfnaversearch)
 
 #### [Chrome](https://www.google.com/chrome/)
 - General browser.
@@ -39,7 +40,7 @@
     - [1Password](https://chrome.google.com/webstore/detail/1password-%E2%80%93-password-mana/aeblfdkhhhdcdjpifhhbdiojplfjncoa)
         - A powerful subscription-based password manager.
     - [META SEO inspector](https://chromewebstore.google.com/detail/meta-seo-inspector/ibkclpciafdglkjkcibmohobjkcfkaef)
-        -  Easily inspect the meta data found inside web pages, find issues and get advices to fix them.
+        -  Easily inspect the metadata found inside web pages, find issues and get advice to fix them.
     - [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
         - React Developer Tools is a Chrome DevTools extension for the open-source React JavaScript library. It allows you to inspect the React component hierarchies in the Chrome Developer Tools.
     - **For Koreans Only**
@@ -78,7 +79,7 @@
 #### [iTerm2](https://www.iterm2.com)
 - [sssum.itermcolors](https://github.com/iandmyhand/settings/blob/master/MacOSX/sssum.itermcolors)
 - Alfred Support
-    - Go to Alfred Preferences and choose Features. Pick Terminal/Shell and for Application choose Custom. Then paste the [iTerm2 3.0 Alfred Script](https://github.com/iandmyhand/settings/blob/master/MacOSX/iTerm2-3.0AlfredScript.txt)
+    - Go to Alfred Preferences and choose Features. Pick Terminal/Shell, and for Application choose Custom. Then paste the [iTerm2 3.0 Alfred Script](https://github.com/iandmyhand/settings/blob/master/MacOSX/iTerm2-3.0AlfredScript.txt)
 - [inshellisense](https://github.com/microsoft/inshellisense)
     - inshellisense provides IDE style autocomplete for shells.
 
