@@ -5,6 +5,9 @@
 #### [Notion](https://www.notion.so/)
 - All-in-one workspace: Notes, Docs, Knowledge Base, Tasks, Projects, Spreadsheets, Databases
 
+#### [Visual Studio Code](https://code.visualstudio.com/download)
+- Lightweight Code Editor that provides CoPilot!
+
 #### [Sublime Text 3](http://www.sublimetext.com/3)
 - Lightweight Text Editor that supports Linux, Mac OS, and Windows.
 - Packages
@@ -15,8 +18,6 @@
     
     - [Codecs33](https://github.com/seanliang/Codecs33/tree/osx) for ConvertToUTF8.
     - [ConvertToUTF8](https://github.com/seanliang/ConvertToUTF8) for editing CJK encoding files.
-
-#### [Visual Studio Code](https://code.visualstudio.com/)
 
 
 ## for Productivity
@@ -62,6 +63,8 @@
 - [sssum.itermcolors](https://github.com/iandmyhand/settings/blob/master/MacOSX/sssum.itermcolors)
 - Alfred Support
     - Go to Alfred Preferences and choose Features. Pick Terminal/Shell and for Application choose Custom. Then paste the [iTerm2 3.0 Alfred Script](https://github.com/iandmyhand/settings/blob/master/MacOSX/iTerm2-3.0AlfredScript.txt)
+- [inshellisense](https://github.com/microsoft/inshellisense)
+    - inshellisense provides IDE style autocomplete for shells.
 
 #### [Homebrew](https://docs.brew.sh/Installation)
 
