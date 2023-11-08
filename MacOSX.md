@@ -31,6 +31,20 @@
 
 #### [Chrome](https://www.google.com/chrome/)
 - General browser.
+- Extensions
+    - [Grammarly](https://chrome.google.com/webstore/detail/grammarly-grammar-checker/kbfnbcaeplbcioakkpcpgfkobkghlhen)
+        - English Grammar Checker and AI Writing App
+    - [GoFullPage](https://chrome.google.com/webstore/detail/gofullpage-full-page-scre/fdpohaocaechififmbbbbbknoalclacl)
+        - A Full Page Screen Capture tool that enables you to capture web pages in PDF, PNG, and other formats.
+    - [1Password](https://chrome.google.com/webstore/detail/1password-%E2%80%93-password-mana/aeblfdkhhhdcdjpifhhbdiojplfjncoa)
+        - A powerful subscription-based password manager.
+    - [META SEO inspector](https://chromewebstore.google.com/detail/meta-seo-inspector/ibkclpciafdglkjkcibmohobjkcfkaef)
+        -  Easily inspect the meta data found inside web pages, find issues and get advices to fix them.
+    - [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
+        - React Developer Tools is a Chrome DevTools extension for the open-source React JavaScript library. It allows you to inspect the React component hierarchies in the Chrome Developer Tools.
+    - **For Koreans Only**
+        - [Naver English Dictionary](https://chrome.google.com/webstore/detail/%EB%84%A4%EC%9D%B4%EB%B2%84-%EC%98%81%EC%96%B4%EC%82%AC%EC%A0%84-naver-english-di/jfibpeiddefellcfgnijpcpddoimbdij?hl=en)
+            - Korean-English Dictionary. Just double-click English words that you do not understand.
 
 #### [Dropbox](https://www.dropbox.com/desktop)
 - File sharing.
@@ -50,14 +64,16 @@
 
 #### [Slack](https://slack.com/)
 
-#### [KakaoTalk](https://www.kakaocorp.com/page/service/service/KakaoTalk)
+#### [Telegram](https://telegram.org/)
 
 #### [Line](https://line.me/)
 
-#### [Telegram](https://telegram.org/)
+### For Koreans Only
+
+#### [KakaoTalk](https://www.kakaocorp.com/page/service/service/KakaoTalk)
 
 
-## for Software Development
+## For Software Development
 
 #### [iTerm2](https://www.iterm2.com)
 - [sssum.itermcolors](https://github.com/iandmyhand/settings/blob/master/MacOSX/sssum.itermcolors)
@@ -109,4 +125,4 @@ Add the following line at the end of the ~/.zshrc file:
 # Mac OS X Settings
 
 - [Max OS X Key bindings](https://github.com/iandmyhand/settings/blob/master/MacOSX/MacOSXKeyBinding.md)
-    - Home, End, Page Up, Page Down Key를 윈도우처럼 사용하고 싶을 때 적용한다. HHKB2를 이용하고 있다면 매우 유용하다.
+    - Apply this to use the Home, End, Page Up, and Page Down Keys like Windows for HHKB2(Happy Hacking KeyBoard 2).
