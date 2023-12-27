@@ -19,6 +19,9 @@
     - [Codecs33](https://github.com/seanliang/Codecs33/tree/osx) for ConvertToUTF8.
     - [ConvertToUTF8](https://github.com/seanliang/ConvertToUTF8) for editing CJK encoding files.
 
+#### [heynote](https://heynote.com/)
+- A dedicated scratchpad for developers.
+
 
 ## for Productivity
 
