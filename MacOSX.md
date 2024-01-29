@@ -19,8 +19,6 @@
     - [Codecs33](https://github.com/seanliang/Codecs33/tree/osx) for ConvertToUTF8.
     - [ConvertToUTF8](https://github.com/seanliang/ConvertToUTF8) for editing CJK encoding files.
 
-#### [heynote](https://heynote.com/)
-- A dedicated scratchpad for developers.
 
 
 ## for Productivity
@@ -124,6 +122,10 @@ $ brew install direnv
 
 Add the following line at the end of the ~/.zshrc file:
 `eval "$(direnv hook zsh)"`
+
+#### [starship](https://starship.rs/)
+
+#### [Better Commits](https://github.com/Everduin94/better-commits)
 
 
 # Mac OS X Settings
