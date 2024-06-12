@@ -31,9 +31,6 @@
 - **For Koreans Only**
     - Naver Search Workflow: [alfnaversearch](https://github.com/Kuniz/alfnaversearch)
 
-#### [AeroSpace](https://github.com/nikitabobko/AeroSpace)
-- Manual tiling window manager
-
 #### [Chrome](https://www.google.com/chrome/)
 - General browser.
 - Extensions
@@ -63,6 +60,9 @@
 #### [Microsoft To Do](https://todo.microsoft.com/)
 
 #### [Bandizip](https://kr.bandisoft.com/bandizip.mac/)
+
+#### [Rectangle](https://rectangleapp.com/)
+- Move and resize windows in macOS using keyboard shortcuts or snap areas
 
 
 ## Messager
