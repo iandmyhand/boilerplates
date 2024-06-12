@@ -64,6 +64,9 @@
 #### [Rectangle](https://rectangleapp.com/)
 - Move and resize windows in macOS using keyboard shortcuts or snap areas
 
+#### [Xnapper](https://xnapper.com/)
+- Beautify screenshots.
+
 
 ## Messager
 
