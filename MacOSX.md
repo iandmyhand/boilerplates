@@ -31,6 +31,9 @@
 - **For Koreans Only**
     - Naver Search Workflow: [alfnaversearch](https://github.com/Kuniz/alfnaversearch)
 
+#### [AeroSpace](https://github.com/nikitabobko/AeroSpace)
+- Manual tiling window manager
+
 #### [Chrome](https://www.google.com/chrome/)
 - General browser.
 - Extensions
