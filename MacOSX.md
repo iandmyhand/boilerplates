@@ -94,6 +94,18 @@
 
 ### [Homebrew](https://docs.brew.sh/Installation)
 
+### figlet
+
+```
+brew install figlet
+```
+
+### lolcat
+
+```
+brew install lolcat
+```
+
 ### [ZSH](https://en.wikipedia.org/wiki/Z_shell)
     
 - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
@@ -104,6 +116,7 @@
     
 - settings
     - [~/.zshrc](https://github.com/iandmyhand/settings/blob/master/MacOSX/.zshrc)
+    - [~/.vimrc](https://github.com/iandmyhand/boilerplates/blob/master/UNIX/.vimrc)
     - [~/.oh-my-zsh/themes/sssum.zsh-theme](https://github.com/iandmyhand/settings/blob/master/MacOSX/sssum.zsh-theme)
 
 ### Git
