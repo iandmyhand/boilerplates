@@ -135,6 +135,16 @@ brew install python3
 brew install node
 ```
 
+### MySQL
+
+```
+brew install MySQL
+brew services start MySQL
+mysql_secure_installation
+```
+
+[MySQL Workbench](https://dev.mysql.com/downloads/workbench/)
+
 ### [direnv](https://direnv.net/)
 
 ```
