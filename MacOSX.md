@@ -13,7 +13,7 @@
 - Packages
 
     ```
-    Command + Shift + P > Install Package > type below packages.
+    Command + Shift + P > Install Package > Type the packages below.
     ```
     
     - [Codecs33](https://github.com/seanliang/Codecs33/tree/osx) for ConvertToUTF8.
@@ -41,7 +41,7 @@
     - [1Password](https://chrome.google.com/webstore/detail/1password-%E2%80%93-password-mana/aeblfdkhhhdcdjpifhhbdiojplfjncoa)
         - A powerful subscription-based password manager.
     - [META SEO inspector](https://chromewebstore.google.com/detail/meta-seo-inspector/ibkclpciafdglkjkcibmohobjkcfkaef)
-        -  Easily inspect the metadata found inside web pages, find issues and get advice to fix them.
+        -  Easily inspect the metadata found inside web pages, find issues, and get advice on how to fix them.
     - [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
         - React Developer Tools is a Chrome DevTools extension for the open-source React JavaScript library. It allows you to inspect the React component hierarchies in the Chrome Developer Tools.
     - **For Koreans Only**
@@ -63,6 +63,10 @@
 
 ### [Rectangle](https://rectangleapp.com/)
 - Move and resize windows in macOS using keyboard shortcuts or snap areas
+- Settings
+    - Check 'Launch on login'
+    - Check 'Check for updates automatically'
+    - Import the previous settings.
 
 ### [Xnapper](https://xnapper.com/)
 - Beautify screenshots.
