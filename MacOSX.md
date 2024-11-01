@@ -29,7 +29,7 @@
 ### [Alfred](https://www.alfredapp.com/help/getting-started/install/)
 - Alfred boosts your efficiency with hotkeys, keywords, text expansion, and more. Search your Mac and the web, and be more productive with custom actions to control your Mac.
 - **For Koreans**
-    - Naver Search Workflow: [alfnaversearch](https://github.com/Kuniz/alfnaversearch/releases))
+    - Naver Search Workflow: [alfnaversearch](https://github.com/Kuniz/alfnaversearch/releases)
 
 ### [Chrome](https://www.google.com/chrome/)
 - General browser.
