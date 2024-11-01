@@ -68,6 +68,8 @@
     - Check 'Check for updates automatically'
     - Import the previous settings.
 
+### [ChatGPT Desktop](https://openai.com/chatgpt/download/)
+
 ### [Xnapper](https://xnapper.com/)
 - Beautify screenshots.
 
