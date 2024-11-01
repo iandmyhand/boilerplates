@@ -141,6 +141,7 @@ brew install node
 brew install MySQL
 brew services start MySQL
 mysql_secure_installation
+brew install pkg-config mysql-client
 ```
 
 [MySQL Workbench](https://dev.mysql.com/downloads/workbench/)
