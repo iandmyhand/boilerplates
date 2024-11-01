@@ -14,6 +14,7 @@ else
   export EDITOR='mvim'
 fi
 ...
+eval "$(/opt/homebrew/bin/brew shellenv)"
 if [ -z "$SSH_AUTH_SOCK" ] ; then
   echo '\nRun ssh-agent and add keys...'
   eval "$(ssh-agent -s)"
