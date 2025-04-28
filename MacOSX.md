@@ -8,6 +8,9 @@
 ### [Visual Studio Code](https://code.visualstudio.com/download)
 - Lightweight Code Editor that provides CoPilot!
 
+#### [Cursor](https://www.cursor.com/)
+- Code with AI!
+
 ### [Sublime Text 3](http://www.sublimetext.com/3)
 - Lightweight Text Editor that supports Linux, Mac OS, and Windows.
 - Packages
