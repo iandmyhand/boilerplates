@@ -5,6 +5,9 @@
 ### [Notion](https://www.notion.so/)
 - All-in-one workspace: Notes, Docs, Knowledge Base, Tasks, Projects, Spreadsheets, Databases
 
+### [Simplenote](https://apps.apple.com/kr/app/simplenote-notes-and-memos/id692867256?l=en-GB&mt=12)
+- Just a very simple note app that syncs with Windows, Mac, iOS, and Android.
+
 ### [Visual Studio Code](https://code.visualstudio.com/download)
 - Lightweight Code Editor that provides CoPilot!
 
