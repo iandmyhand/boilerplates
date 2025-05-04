@@ -131,6 +131,11 @@ brew install lolcat
 - ```brew install git```
 - git-flow: ```brew install git-flow-avh```
 
+### ssh
+
+- settings
+    - [~/.ssh/config](https://github.com/iandmyhand/boilerplates/blob/master/UNIX/.ssh)
+
 ### [python3](https://www.python.org/)
 
 ```
