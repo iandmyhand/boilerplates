@@ -151,9 +151,9 @@ brew install node
 ### MySQL
 
 ```
-brew install mysql@8.0
-brew link mysql@8.0 --force
-brew services start mysql@8.0
+brew install mysql@8.4
+brew link mysql@8.4 --force
+brew services start mysql@8.4
 mysql_secure_installation
 brew install pkg-config mysql-client
 ```
