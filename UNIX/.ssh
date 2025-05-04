@@ -1,0 +1,11 @@
+$ vi ~/.ssh/config
+
+Host a.github.com
+  HostName github.com
+  PreferredAuthentications publickey
+  IdentityFile /path/to/.ssh/deploy_key_a
+
+Host b.github.com
+  HostName github.com
+  PreferredAuthenticatoins publickey
+  IdentityFile /path/to/.ssh/deploy_key_b
