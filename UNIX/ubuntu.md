@@ -15,7 +15,7 @@
 ## Install favorite packages
 
     ```
-    sudo apt-get -y install vim vim-gtk curl ssh git git-core zsh npm python3 python3-pip figlet lolcat
+    sudo apt-get -y install vim curl ssh git zsh npm python3 python3-pip figlet lolcat
     sudo apt-get -y install direnv openjdk-8-jdk 
     sudo apt-get -y install xfsprogs ntfs-3g glusterfs-server samba samba-common-bin smbclient nginx
     ```
