@@ -45,7 +45,15 @@
 - settings
     - Refer to [~/.zshrc](https://github.com/iandmyhand/settings/blob/master/MacOSX/.zshrc)
     - Copy [~/.oh-my-zsh/themes/sssum.zsh-theme](https://github.com/iandmyhand/settings/blob/master/MacOSX/sssum.zsh-theme)
-    
+
+### Setup locale for Korean
+
+```
+sudo apt-get install locales
+sudo locale-gen ko_KR.UTF-8
+sudo update-locale
+```
+
 ### Use IP for Ubuntu terminal prompt on EC2
 
      ```
