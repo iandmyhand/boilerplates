@@ -15,9 +15,9 @@
 ## Install favorite packages
 
     ```
-    sudo apt-get -y install vim vim-gtk curl ssh git git-core zsh openjdk-8-jdk npm python3 python3-pip direnv figlet lolcat
-    sudo apt-get -y xfsprogs ntfs-3g glusterfs-server samba samba-common-bin smbclient nginx
-    sudo apt-get -y figlet lolcat
+    sudo apt-get -y install vim vim-gtk curl ssh git git-core zsh npm python3 python3-pip figlet lolcat
+    sudo apt-get -y install direnv openjdk-8-jdk 
+    sudo apt-get -y install xfsprogs ntfs-3g glusterfs-server samba samba-common-bin smbclient nginx
     ```
 
 ## Set up ssh to start automatically after boot.
