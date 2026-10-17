@@ -37,6 +37,9 @@
 - **For Koreans**
     - Naver Search Workflow: [alfnaversearch](https://github.com/Kuniz/alfnaversearch/releases)
 
+### [Catchtype](https://catchtype.com/#download)
+Skip the 한/영 key. Just type.
+
 ### [Chrome](https://www.google.com/chrome/)
 - General browser.
 - Extensions
