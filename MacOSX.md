@@ -11,7 +11,7 @@
 ### [Visual Studio Code](https://code.visualstudio.com/download)
 - Lightweight Code Editor that provides CoPilot!
 
-#### [Cursor](https://www.cursor.com/)
+### [Cursor](https://www.cursor.com/)
 - Code with AI!
 
 ### [Sublime Text 4](https://www.sublimetext.com/download)
