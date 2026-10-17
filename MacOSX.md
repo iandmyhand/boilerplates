@@ -9,10 +9,7 @@
 - Just a very simple note app that syncs with Windows, Mac, iOS, and Android.
 
 ### [Visual Studio Code](https://code.visualstudio.com/download)
-- Lightweight Code Editor that provides CoPilot!
-
-### [Cursor](https://www.cursor.com/)
-- Code with AI!
+- Lightweight Code Editor for checking code or text files sometimes.
 
 ### [Sublime Text 4](https://www.sublimetext.com/download)
 - Lightweight Text Editor that supports Linux, Mac OS, and Windows.
@@ -56,6 +53,8 @@ Skip the 한/영 key. Just type.
     - **For Koreans Only**
         - [Naver English Dictionary](https://chrome.google.com/webstore/detail/%EB%84%A4%EC%9D%B4%EB%B2%84-%EC%98%81%EC%96%B4%EC%82%AC%EC%A0%84-naver-english-di/jfibpeiddefellcfgnijpcpddoimbdij?hl=en)
             - Korean-English Dictionary. Just double-click English words that you do not understand.
+         
+### Claude Desktop
 
 ### [Dropbox](https://www.dropbox.com/desktop)
 - File sharing.
